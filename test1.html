@@ -1,0 +1,344 @@
+<html>
+<head>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="appy-style.css">
+    <link rel='stylesheet' href='foo.css'>
+    <style type="text/css">
+
+        .hbox {
+            display: flex;
+            flex-direction: row;
+            border: 0px solid black;
+        }
+        .vbox {
+            display: flex;
+            flex-direction: column;
+            border: 0px solid black;
+        }
+        .toolbar {
+            border: 0px solid black;
+        }
+
+        body {
+            background-color: #888;
+        }
+
+
+        ul.tabs {
+            display: flex;
+            flex-direction: row;
+            border: 0px solid black;
+            margin: 0;
+            padding: 0.5em 1em 0em 1em;
+            background-color: #333;
+            border-bottom-width: 1px;
+        }
+        ul.tabs li {
+            display: inline-block;
+            border: 0px solid red;
+            margin: 0 0.25em 0 0.25em;
+            padding: 0.75em;
+            padding-top: 0.25em;
+            padding-bottom: 0.1em;
+            background-color: #444;
+            color: #aaa;
+            border-radius: 5px 5px 0px 0px;
+            border: 1px solid black;
+            margin-bottom: -1px;
+        }
+        ul.tabs li:hover, ul.tabs li.selected:hover {
+            background-color: #888;
+        }
+        ul.tabs li.selected {
+            background-color: #666;
+        }
+
+        .fill {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .toolbar {
+            align-items: baseline;
+        }
+
+        .border-bottom {
+            border-bottom-width: 1px;
+        }
+        .border-right {
+            border-right-width: 1px;
+        }
+        .border-left {
+            border-left-width: 1px;
+        }
+        .border-top {
+            border-top-width: 1px;
+        }
+
+
+        .accordion-title {
+            border: 0px solid black;
+            background-color: #444;
+            color: #888;
+            margin: 0;
+            padding: 0;
+        }
+        .accordion-title label {
+            padding: 0;
+            margin: 0;
+        }
+        .accordion-body {
+            padding: 0.25em;
+            min-height: 10em;
+            border: 1px solid black;
+        }
+
+        .scrollpane {
+            overflow: scroll;
+        }
+
+        .toolbar button {
+            background-color: #666;
+            background-image: none;
+            border: 1px solid #222;
+            text-shadow: none;
+        }
+        .toolbar {
+            background-color: #444;
+            color: #ccc;
+        }
+        .toolbar h3 {
+            font-weight: normal;
+        }
+
+        ul.list {
+            padding: 0;
+            margin: 0;
+            background-color: #ccc;
+        }
+        ul.list li {
+            border: 0px solid black;
+            padding: 0.25em;
+            margin: 0;
+            border-bottom-width: 1px;
+        }
+        ul.list li.selected {
+            background-color: #3072b3;
+        }
+
+        .no-bg {
+            border-width: 0;
+            background-image: none;
+            background-color: transparent;
+            color: #ccc;
+            text-shadow: none;
+        }
+
+        .small {
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+
+buttons with accessories
+build new ui mockup with:
+    //tabs,
+    //slider,
+    --rotation slider,
+    //range slider,
+    //prog spinner,
+    //non-combo dropdown ui,
+    //accordion panels,
+
+    number stepper,
+    dialogs w/ overlays
+    tree view w/ triangles,
+    iTunes like table view,
+-->
+<div class="vbox fill">
+    <div class="toolbar border-bottom">
+        <button class="fa fa-bars"></button>
+        <h3>Rad App</h3>
+        <label class="grow"></label>
+        <label>center stuff</label>
+        <label class="grow"></label>
+        <button>right</button>
+    </div>
+    <div class="hbox grow">
+        <div class="vbox border-right">
+            <div class="toolbar">
+                <button>foo</button>
+                <button>foo</button>
+                <button>foo</button>
+                <button>foo</button>
+            </div>
+            <ul class="list">
+                <li>list item</li>
+                <li>list item</li>
+                <li class="selected">list item</li>
+                <li>list item</li>
+            </ul>
+            <div class="box grow form scrollpane small">
+                <div class="row">
+                    <label>text</label>
+                    <input type="text" placeholder="placeholder"/>
+                    <label>password</label>
+                    <input type="password" value="password">
+                </div>
+                <div class="row">
+                    <label>buttons</label>
+                    <button>button</button>
+                    <input type="button" value="i button">
+                    <input type="submit" value="submit">
+                    <input type="reset"  value="reset">
+                </div>
+                <div class="row">
+                    <label> alt check/radio</label>
+                    <input type="checkbox" value="checkbox" class="button"> checkbox
+                    <input type="radio" value="radio" class="button"> radio
+                </div>
+                <div class="row">
+                    <label>std check/radio</label>
+                    <input type="checkbox" value="checkbox"> checkbox
+                    <input type="radio" value="radio"> radio
+                </div>
+                <div class="row">
+                    <label>range</label>
+                    <input type="range" min="0" max="100"/>
+                    <label>number</label>
+                    <input type="number" value="8">
+                </div>
+                <div class="row">
+                    <label>meter</label>
+                    <meter min="0" max="100" value="24"></meter>
+                    <label>progress</label>
+                    <progress min="0" max="100" value="24"></progress>
+                    <label>spinner</label>
+                    <progress class="spinner" min="0" max="100" value="24"></progress>
+                </div>
+                <div class="row">
+                    <label>file</label>
+                    <input type="file">
+                </div>
+                <div class="row">
+                    <label>email</label>
+                    <input type="email" value="me@me.me">
+                </div>
+                <div class="row">
+                    <label>date and time</label>
+                    <input type="date">
+                    <input type="time">
+                </div>
+                <div class="row">
+                    <label>color</label>
+                    <input type="color">
+                </div>
+                <div class="row">
+                    <label>select</label>
+                    <select>
+                        <option>option 1</option>
+                        <option>option 2</option>
+                        <option>option 3</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label>dropdown</label>
+                    <div class="group">
+                        <input type="text" value="textfield">
+                        <button class="fa fa-caret-down"></button>
+                    </div>
+                </div>
+                <div class="row">
+                    <label>dropdown</label>
+                    <div class="group">
+                        <button>button</button>
+                        <button class="fa fa-caret-down"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="vbox grow">
+            <ul class="tabs">
+                <li>Tab 1</li>
+                <li class="selected">Tab 2</li>
+                <li>Tab 3</li>
+            </ul>
+            <div class="grow vbox" style="padding: 0;">
+                <textarea class="grow"
+                        style="margin: 0; background-color: #ddd;"
+                        >This is some editable text</textarea>
+            </div>
+        </div>
+
+        <div class="vbox border-left">
+            <div class="scrollpane">
+                <div class="accordion-panel">
+                    <div class="accordion-title">
+                        <button class="fa fa-caret-right fa-fw no-bg"></button>
+                        <label>this is a title</label>
+                    </div>
+                    <div class="accordion-body vbox">
+                        this is the contents of the accordion thingy
+                    </div>
+                </div>
+                <div class="accordion-panel">
+                    <div class="accordion-title">
+                        <button class="fa fa-eye"></button>
+                        <label>this is a title</label>
+                    </div>
+                    <div class="accordion-body vbox">
+                        this is the contents of the accordion thingy
+                    </div>
+                </div>
+                <div class="accordion-panel">
+                    <div class="accordion-title">
+                        <button class="fa fa-eye"></button>
+                        <label>this is a title</label>
+                    </div>
+                    <div class="accordion-body vbox">
+                        this is the contents of the accordion thingy
+                    </div>
+                </div>
+                <div class="accordion-panel">
+                    <div class="accordion-title">
+                        <button class="fa fa-eye"></button>
+                        <label>this is a title</label>
+                    </div>
+                    <div class="accordion-body vbox">
+                        this is the contents of the accordion thingy
+                    </div>
+                </div>
+                <div class="accordion-panel">
+                    <div class="accordion-title">
+                        <button class="fa fa-eye"></button>
+                        <label>this is a title</label>
+                    </div>
+                    <div class="accordion-body vbox">
+                        this is the contents of the accordion thingy
+                    </div>
+                </div>
+                <div class="accordion-panel">
+                    <div class="accordion-title">
+                        <button class="fa fa-eye"></button>
+                        <label>this is a title</label>
+                    </div>
+                    <div class="accordion-body vbox">
+                        this is the contents of the accordion thingy
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>
