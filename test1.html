@@ -38,25 +38,27 @@ build new ui mockup with:
         <button class="fa fa-bars"></button>
         <h3>Rad App</h3>
         <label class="grow"></label>
-        <label>center stuff</label>
+        <label>Test for AppyStyle</label>
         <label class="grow"></label>
         <button>right</button>
     </div>
     <div class="hbox grow">
-        <div class="vbox border-right sidebar">
-            <div class="toolbar">
+        <div class="vbox border-right sidebar"
+             style="min-width: 500px"
+                >
+            <div class="toolbar border-bottom">
                 <button>new</button>
                 <button>save</button>
                 <button>edit</button>
                 <button class="fa fa-close"></button>
             </div>
-            <ul class="list">
-                <li>list item</li>
-                <li>list item</li>
-                <li class="selected">list item</li>
-                <li>list item</li>
+            <ul class="list lined">
+                <li><span class="grow">list item</span> <button class="fa fa-eye"></button></li>
+                <li class="selected"><span class="grow">list item</span> <button class="fa fa-eye"></button></li>
+                <li><span class="grow">list item</span> <button class="fa fa-eye"></button></li>
+                <li><span class="grow">list item</span> <button class="fa fa-eye"></button></li>
             </ul>
-            <div class="box grow form scrollpane small">
+            <div class="box grow form scrollpane">
                 <div class="row">
                     <label>text</label>
                     <input type="text" placeholder="placeholder" value="text"/>
@@ -87,16 +89,16 @@ build new ui mockup with:
                 <div class="row">
                     <label> alt check/radio</label>
                     <input type="checkbox" value="checkbox" class="button">
-                    <input type="radio" value="radio" class="button">
                     <input type="checkbox" value="checkbox" class="button" checked>
-                    <input type="radio" value="radio" class="button" checked>
+                    <input type="radio" value="radio" class="button" name="r1">
+                    <input type="radio" value="radio" class="button" name="r1" checked>
                 </div>
                 <div class="row">
                     <label>std check/radio</label>
                     <input type="checkbox" value="checkbox"> checkbox
-                    <input type="radio" value="radio"> radio
                     <input type="checkbox" value="checkbox" checked> checkbox
-                    <input type="radio" value="radio" checked> radio
+                    <input type="radio" value="radio" name="r2"> radio
+                    <input type="radio" value="radio" name="r2" checked> radio
                 </div>
                 <div class="row">
                     <label>range</label>
@@ -167,13 +169,13 @@ build new ui mockup with:
                 <li>Tab 3</li>
             </ul>
             <div class="grow vbox" style="padding: 0;">
-                <textarea class="grow">This is some editable text</textarea>
+                <textarea class="grow border-none">This is some editable text</textarea>
             </div>
             <table class="grow styled">
                 <thead>
                     <th>name</th>
-                    <th class="selected">duration</th>
-                    <th>date</th>
+                    <th class="selected">Duration</th>
+                    <th>Content Created</th>
                     <th>File Type</th>
                 </thead>
                 <tbody>
@@ -184,6 +186,42 @@ build new ui mockup with:
                     <td>Portable Document format</td>
                 </tr>
                 <tr class="disabled">
+                    <td>20reasons.pdf</td>
+                    <td></td>
+                    <td>March 3rd, 2013</td>
+                    <td>Portable Document format</td>
+                </tr>
+                <tr>
+                    <td>20reasons.pdf</td>
+                    <td></td>
+                    <td>March 3rd, 2013</td>
+                    <td>Portable Document format</td>
+                </tr>
+                <tr>
+                    <td>20reasons.pdf</td>
+                    <td></td>
+                    <td>March 3rd, 2013</td>
+                    <td>Portable Document format</td>
+                </tr>
+                <tr>
+                    <td>20reasons.pdf</td>
+                    <td></td>
+                    <td>March 3rd, 2013</td>
+                    <td>Portable Document format</td>
+                </tr>
+                <tr>
+                    <td>20reasons.pdf</td>
+                    <td></td>
+                    <td>March 3rd, 2013</td>
+                    <td>Portable Document format</td>
+                </tr>
+                <tr>
+                    <td>20reasons.pdf</td>
+                    <td></td>
+                    <td>March 3rd, 2013</td>
+                    <td>Portable Document format</td>
+                </tr>
+                <tr class="selected">
                     <td>20reasons.pdf</td>
                     <td></td>
                     <td>March 3rd, 2013</td>
@@ -225,7 +263,7 @@ build new ui mockup with:
                 </div>
                 <div class="accordion-panel">
                     <div class="accordion-title">
-                        <button class="fa fa-caret-right fa-fw no-bg"></button>
+                        <button class="fa fa-caret-down fa-fw"></button>
                         <label>this is a title</label>
                     </div>
                     <div class="accordion-body vbox scrollpane">
@@ -245,42 +283,6 @@ build new ui mockup with:
                             <li>item 6</li>
                             <li>item 7</li>
                         </ul>
-                    </div>
-                </div>
-                <div class="accordion-panel">
-                    <div class="accordion-title">
-                        <button class="fa fa-eye"></button>
-                        <label>this is a title</label>
-                    </div>
-                    <div class="accordion-body vbox">
-                        this is the contents of the accordion thingy
-                    </div>
-                </div>
-                <div class="accordion-panel">
-                    <div class="accordion-title">
-                        <button class="fa fa-eye"></button>
-                        <label>this is a title</label>
-                    </div>
-                    <div class="accordion-body vbox">
-                        this is the contents of the accordion thingy
-                    </div>
-                </div>
-                <div class="accordion-panel">
-                    <div class="accordion-title">
-                        <button class="fa fa-eye"></button>
-                        <label>this is a title</label>
-                    </div>
-                    <div class="accordion-body vbox">
-                        this is the contents of the accordion thingy
-                    </div>
-                </div>
-                <div class="accordion-panel">
-                    <div class="accordion-title">
-                        <button class="fa fa-eye"></button>
-                        <label>this is a title</label>
-                    </div>
-                    <div class="accordion-body vbox">
-                        this is the contents of the accordion thingy
                     </div>
                 </div>
             </div>

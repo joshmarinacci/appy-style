@@ -32,6 +32,7 @@ html, body, div
 html, body
   background-color: white
   color: black
+  font-size: 10pt
 
   /* basic layout */
 .hbox
@@ -54,57 +55,68 @@ html, body
   overflow: scroll
 .grow
   flex: 1
+.toolbar, .tabs
+  min-height: 2.5rem
+
 .toolbar
   display: flex
   flex-direction: row
-  align-items: baseline
+  align-items: center
+
 
 
 
 
 
 /* tabs */
-ul.tabs
+.tabs
   display: flex
   flex-direction: row
   margin: 0
-  padding: 0.5em 1em 0 1em
+  padding: 0em 1em 0 1em
+  border-bottom: 1px solid black
+  align-items: flex-end
 
-ul.tabs li
+.tabs li
   display: inline-block
-  padding: 0.25em 0.75em 0.1em
+  padding: 0.5em 0.75em 0.1em
   border-radius: 5px 5px 0 0
-  margin: 0 0.25em -1px
-
-ul.tabs li:hover, ul.tabs li.selected:hover
-  background-color: gray
-ul.tabs li.selected
-  background-color: gray
+  margin: 0.5em 0.5em 0em 0.5em
 
 
   /* list */
 ul.list
   padding: 0
   margin: 0
-
-ul.list li
-  padding: 0.25em
-  margin: 0
-  border-bottom-width: 1px
-
-ul.list li.selected
-  background-color: gray
-
+  li
+    padding: 0.25em
+    margin: 0
+    background-color: #888
+    color: #ddd
+    display: flex
+    flex-direction: row
+    align-items: baseline
+  li.selected
+    background-color: #68f
+ul.list.lined
+  li
+    border-bottom: 1px solid black
+ul.list.zebra
+  li:nth-child(even)
+    background-color: #333
 
   /* tree */
 ul.tree
   margin: 0
-  padding: 0
+  padding: 0.5em
 ul.tree li
   list-style: none
   margin: 0
   padding: 0
 
+.accordion-body
+  padding: 0
+  margin: 0
 
 
   /* sortable table */
@@ -131,13 +143,22 @@ table.styled tr.disabled
   color: black
 
 
-.accordion-title
-  background-color: black
-  color: white
-  margin: 0
+.accordion-panel
   padding: 0
-.accordion-body
-  padding: 0.25em
+  .accordion-title
+    background-color: black
+    color: white
+    margin: 0
+    padding: 0.15em
+    border: 0px solid brown
+    button
+      border: 0px solid red
+      background-color: transparent
+      padding: 0
+      margin: 0
+  .accordion-body
+    padding: 0em
+    margin: 0em
 
 
 
@@ -163,7 +184,8 @@ input, button, textarea, select
   vertical-align: baseline
   border-radius: 0
   border: 1px solid black
-
+textarea
+  margin: 0
 button,
 .button,
 .accessory,
@@ -234,13 +256,24 @@ input[type="radio"].button:after, input[type="checkbox"].button:after
 
 
 /* basic colors */
-$base-background: #666
-$sidebar-background: #444
+$base-background: #888
+
+$sidebar-background: #666
 $sidebar-sub-background: #333
 $sidebar-item-background: #888
 $sidebar-color: #ccc
-$sidebar-text-background: #aaa
+$sidebar-text-background: #888
 $sidebar-text-color: #222
+$sidebar-button-border: #333
+$sidebar-button-color: #ccc
+$sidebar-button-background: #444
+$sidebar-button-selected-background: #888
+$sidebar-text-focused-background: #ddd
+$sidebar-selection-background: #59f
+$sidebar-selection-color: #222
+$sidebar-selection-hover-color: #6688ff
+
+$normal-button-background: #666
 
 $component-background: #888
 $color1: #888
@@ -254,50 +287,162 @@ body
   background-color: $sidebar-background
 .accordion-title
   background-color: $sidebar-sub-background
-table.styled, ul.list, .accordion-body
+table.styled, ul.list, ul.tree
   background-color: $component-background
+  color: #222
+.accordion-body
+  background-color: $sidebar-background
 
-
+.tabs li
+  background-color: #aaa
+.tabs li.selected
+  background-color: #ccc
+.tabs li:hover
+  background-color: #eee
 
 /* style all button types */
-  /* normal */
+
+  /* simple basic styling for the normal state */
 button,
 input[type="button"],
 input[type="submit"],
 input[type="reset"],
-.button
+input[type="checkbox"].button,
+input[type="radio"].button
   background-color: $button-color
-  border-radius: 0px
-  /* active */
-  /* focused */
-  /* hover */
-  /* selected */
-  /* disabled */
+  border-radius: 5px
+  padding: 0.25em 0.75em
+input
+  border-radius: 3px
 
+  /* focus ring
+button:focus, input:focus
+  outline: none
+  box-shadow: 0 0 10px $sidebar-text-focused-background
+
+
+/* forms not inside of a sidebar or toolbar */
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="checkbox"].button,
+input[type="radio"].button
+  background-color: $normal-button-background
+  border-color: $sidebar-button-border
+  color: $sidebar-button-color
+input[type="text"], textarea
+  background-color: #ddd
+  border-color: $sidebar-button-border
+  color: $sidebar-text-color
+input:focus, textarea:focus
+  background-color: #fff
+
+
+/* sidebar and toolbar buttons
 div.sidebar, div.toolbar
   color: $sidebar-color
+
   button,
   input[type="button"],
   input[type="submit"],
   input[type="reset"],
   input[type="checkbox"].button,
   input[type="radio"].button
-    background-color: $sidebar-item-background
+    background-color: $sidebar-button-background
+    border-color: $sidebar-button-border
+    color: $sidebar-button-color
+
+  button:hover,
+  input[type='button']:hover,
+  input[type="submit"]:hover,
+  input[type="reset"]:hover,
+  input[type="checkbox"].button:hover,
+  input[type="radio"].button:hover
+    background-color: $sidebar-button-selected-background
+
+  button:active,
+  input[type='button']:active,
+  input[type="submit"]:active,
+  input[type="reset"]:active,
+  input[type="checkbox"].button:active,
+  input[type="radio"].button:active
+    background-color: $sidebar-button-background
+
+  button:focus,
+  input[type="button"]:focus,
+  input[type="submit"]:focus,
+  input[type="reset"]:focus,
+  input[type="checkbox"].button:focus,
+  input[type="radio"].button:focus
+    background-color: $sidebar-button-selected-background
+
+  input[type='checkbox'].button:checked,
+  input[type='radio'].button:checked
+    background-color: $sidebar-selection-background
+    color: $sidebar-selection-color
+  input[type='checkbox'].button:checked:hover,
+  input[type='radio'].button:checked:hover
+    background-color: $sidebar-selection-hover-color
+
+  button:disabled,
+  input[type="button"]:disabled,
+  input[type="submit"]:disabled,
+  input[type="reset"]:disabled,
+  input[type="checkbox"].button:disabled,
+  input[type="radio"].button:disabled
+    color: $sidebar-button-selected-background
+
+  button:disabled:hover,
+  input[type="button"]:disabled:hover,
+  input[type="submit"]:disabled:hover,
+  input[type="reset"]:disabled:hover,
+  input[type="checkbox"].button:disabled:hover,
+  input[type="radio"].button:disabled:hover
+    background-color: $sidebar-button-background
+
+
   label
     color: $sidebar-color
+
   input
     background-color: $sidebar-text-background
+    border-color: $sidebar-button-border
     color: $sidebar-text-color
+  input:focus
+    background-color: $sidebar-text-focused-background
+  h3
+    font-weight: normal
 
 
 
-/* focused, active, hover, and checked all the same */
-button:hover, button:focus, button:active,
-.button:hover,  .button:focus, .button:active, .button:checked,
-input[type="button"]:hover, input[type="button"]:focus, input[type="button"]:active, input[type="button"]:checked
-  color: white
-
-
+  /* ============= table styling  ============= */
+table.styled
+  background-color: black
+  td,th
+    border: 1px solid #222
+    border-width: 0px 1px 0px 0px
+    color: white
+  thead
+    th
+      background-color: #666
+      color: #fff
+    th.selected
+      background-color: $sidebar-selection-background
+  tbody
+    td
+      color: #ddd
+      background-color: #444
+    tr:nth-child(even)
+      td
+        background-color: #333
+    tr.selected
+      td
+        background-color: $sidebar-selection-background
+    tr.disabled
+      td
+        color: #888
 
 
   /* ====================== extra tweaks ================== */
@@ -309,14 +454,10 @@ input[type="button"]:hover, input[type="button"]:focus, input[type="button"]:act
   border-left-width: 1px
 .border-top
   border-top-width: 1px
-
-
-.no-bg
+.border-none
   border-width: 0
-  background-image: none
-  background-color: transparent
-  color: white
-  text-shadow: none
+
+
 .small
   font-size: 0.8em
 .tiny
