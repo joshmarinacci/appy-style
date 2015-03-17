@@ -82,7 +82,7 @@
         .accordion-title {
             border: 0px solid black;
             background-color: #444;
-            color: #888;
+            color: #aaa;
             margin: 0;
             padding: 0;
         }
@@ -140,6 +140,53 @@
         .small {
             font-size: 0.8rem;
         }
+
+
+
+
+        ul.tree {
+            margin: 0;
+            padding: 0;
+        }
+        ul.tree li {
+            list-style: none;
+            margin:0;
+            padding: 0;
+        }
+
+        table.styled {
+            background-color: #444;
+            border: 0px solid black;
+            color: #ccc;
+            border-collapse: collapse;
+            font-size: 100%;
+            width: 100%;
+        }
+        table.styled thead {
+            background-color: #777;
+            border-width: 0;
+        }
+        table.styled th {
+            font-weight: normal;
+            color: #fff;
+            padding: 0.25em 0.5em;
+        }
+        table.styled td, table.styled th {
+            padding: 0.3em 0.5em;
+            border: 1px solid black;
+            border-width: 0 1px 0px 0px;
+        }
+        table.styled tr:nth-child(even) {
+            background-color: #555;
+        }
+        table.styled th.selected {
+            background-color: blue;
+        }
+
+        table.styled tr.disabled {
+            color: #666;
+        }
+
     </style>
 </head>
 <body>
@@ -155,11 +202,19 @@ build new ui mockup with:
     //prog spinner,
     //non-combo dropdown ui,
     //accordion panels,
+    //number stepper,
 
-    number stepper,
     dialogs w/ overlays
-    tree view w/ triangles,
+    //tree view w/ triangles,
+
     iTunes like table view,
+
+    variations:
+    select w/o borders to go inside toolbars
+    border-less buttons inside toolbars
+    text box merged with button bg
+    pop-down with arrow
+    active button
 -->
 <div class="vbox fill">
     <div class="toolbar border-bottom">
@@ -173,10 +228,10 @@ build new ui mockup with:
     <div class="hbox grow">
         <div class="vbox border-right">
             <div class="toolbar">
-                <button>foo</button>
-                <button>foo</button>
-                <button>foo</button>
-                <button>foo</button>
+                <button>new</button>
+                <button>save</button>
+                <button>edit</button>
+                <button class="fa fa-close"></button>
             </div>
             <ul class="list">
                 <li>list item</li>
@@ -217,6 +272,8 @@ build new ui mockup with:
                 <div class="row">
                     <label>meter</label>
                     <meter min="0" max="100" value="24"></meter>
+                </div>
+                <div class="row">
                     <label>progress</label>
                     <progress min="0" max="100" value="24"></progress>
                     <label>spinner</label>
@@ -275,6 +332,40 @@ build new ui mockup with:
                         style="margin: 0; background-color: #ddd;"
                         >This is some editable text</textarea>
             </div>
+            <table class="grow styled">
+                <thead>
+                    <th>name</th>
+                    <th class="selected">duration</th>
+                    <th>date</th>
+                    <th>File Type</th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>20reasons.pdf</td>
+                    <td></td>
+                    <td>March 3rd, 2013</td>
+                    <td>Portable Document format</td>
+                </tr>
+                <tr class="disabled">
+                    <td>20reasons.pdf</td>
+                    <td></td>
+                    <td>March 3rd, 2013</td>
+                    <td>Portable Document format</td>
+                </tr>
+                <tr>
+                    <td>20reasons.pdf</td>
+                    <td></td>
+                    <td>March 3rd, 2013</td>
+                    <td>Portable Document format</td>
+                </tr>
+                <tr>
+                    <td>20reasons.pdf</td>
+                    <td></td>
+                    <td>March 3rd, 2013</td>
+                    <td>Portable Document format</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="vbox border-left">
@@ -290,11 +381,26 @@ build new ui mockup with:
                 </div>
                 <div class="accordion-panel">
                     <div class="accordion-title">
-                        <button class="fa fa-eye"></button>
+                        <button class="fa fa-caret-right fa-fw no-bg"></button>
                         <label>this is a title</label>
                     </div>
-                    <div class="accordion-body vbox">
-                        this is the contents of the accordion thingy
+                    <div class="accordion-body vbox scrollpane">
+
+                        <ul class="tree">
+                            <li><i class="fa fa-caret-right"></i> item 1</li>
+                            <li><i class="fa fa-caret-right"></i> item 2</li>
+                            <li><i class="fa fa-caret-down"></i> parent 3
+                                <ul>
+                                    <li>item 1</li>
+                                    <li>item 2</li>
+                                    <li>item 3</li>
+                                </ul>
+                            </li>
+                            <li>item 4</li>
+                            <li>item 5</li>
+                            <li>item 6</li>
+                            <li>item 7</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="accordion-panel">
