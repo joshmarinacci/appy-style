@@ -1,0 +1,277 @@
+/* color definitions
+ background of the window
+ slightly darker for side panes
+ main content color
+ text field background. darker or lighter?
+ button colors, depends on it's background. always lighter
+ selection color
+  for lists, table rows, hovered buttons, selected buttons,
+ disabled: darker or lighter than regular colors
+ checked checkbox/radio buttons & button versions
+
+ */
+
+@mixin border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius:    $radius
+  -ms-border-radius:     $radius
+  border-radius:         $radius
+
+
+
+
+
+/* reset */
+html, body, div
+  color: black
+  background-color: white
+  margin: 0
+  padding: 0
+  font-family: sans-serif
+  font-size: 100%
+  border: 0 solid black
+
+  /* basic layout */
+.hbox
+  display: flex
+  flex-direction: row
+  border: 0px solid black
+.vbox
+  display: flex
+  flex-direction: column
+  border: 0px solid black
+
+.fill
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+
+.scrollpane
+  overflow: scroll
+.grow
+  flex: 1
+.toolbar
+  display: flex
+  flex-direction: row
+  align-items: baseline
+
+
+
+/* basic colors */
+$base-background: #666
+$sidebar-background: #444
+$color1: #888
+$color2: #aaa
+$color3: #ccc
+$bg1: #888
+
+
+/* tabs */
+ul.tabs
+  display: flex
+  flex-direction: row
+  margin: 0
+  padding: 0.5em 1em 0 1em
+
+ul.tabs li
+  display: inline-block
+  padding: 0.25em 0.75em 0.1em
+  border-radius: 5px 5px 0 0
+  margin: 0 0.25em -1px
+
+ul.tabs li:hover, ul.tabs li.selected:hover
+  background-color: gray
+ul.tabs li.selected
+  background-color: gray
+
+
+  /* list */
+ul.list
+  padding: 0
+  margin: 0
+
+ul.list li
+  padding: 0.25em
+  margin: 0
+  border-bottom-width: 1px
+
+ul.list li.selected
+  background-color: gray
+
+
+  /* tree */
+ul.tree
+  margin: 0
+  padding: 0
+ul.tree li
+  list-style: none
+  margin: 0
+  padding: 0
+
+
+
+  /* sortable table */
+table.styled
+  border-collapse: collapse
+  font-size: 100%
+  width: 100%
+
+table.styled thead
+  border-width: 0
+
+table.styled th
+  font-weight: normal
+  padding: 0.25em 0.5em
+table.styled td, table.styled th
+  padding: 0.3em 0.5em
+  border-width: 0 1px 0 0
+
+table.styled tr:nth-child(even)
+  background-color: gray
+table.styled th.selected
+  background-color: gray
+table.styled tr.disabled
+  color: black
+
+
+.accordion-title
+  background-color: black
+  color: white
+  margin: 0
+  padding: 0
+.accordion-body
+  padding: 0.25em
+
+
+
+
+
+
+/* =============== forms  ================ */
+
+
+  /* reset */
+
+input, button, textarea, select
+  font-family: sans-serif
+  font-style: normal
+  font-weight: normal
+  font-variant: normal
+  font-size: 100%
+  min-width: 1em
+  padding: 0.25em
+  margin: 0.25em
+  display: inline-block
+  line-height: 1.3em
+  vertical-align: baseline
+  border-radius: 0
+  border: 1px solid black
+
+button,
+.button,
+.accessory,
+input[type="button"],
+input[type="submit"],
+input[type="reset"]
+  outline: none
+  text-align: center
+  border-radius: 0
+  border: 1px solid black
+
+input[type='text'],
+input[type='search'],
+input[type="radio"].button,
+input[type="checkbox"].button
+  -webkit-appearance: none
+  border: 1px solid black
+  background: white
+  color: black
+
+
+
+  /* form layout */
+
+.row
+  display: flex
+  justify-content: flex-start
+  align-items: baseline
+.row > label:first-child
+  text-align: right
+  min-width: 33%
+
+  /* restyle checkboxes and radios as buttons */
+input[type="radio"].button:after, input[type="checkbox"].button:after
+  content: attr(value)
+
+  /* grouped form items */
+.group
+  display: flex
+  flex-direction: row
+  margin: 0 0.25em
+.group > button,
+.group > .button,
+.group > input[type="button"]
+  border-width: 1px 1px 1px 0px
+  margin: 0
+  border-radius: 0
+  padding: 0.25em 0.5em
+.group > button:first-child,
+.group > input[type="button"]:first-child,
+.group > .button:first-child
+  border-left-width: 1px
+  border-radius: 0.25em 0 0 0.25em
+.group button:last-child,
+.group input[type="button"]:last-child,
+.group .button:last-child
+  border-radius: 0 0.25em 0.25em 0
+
+  /* group accessories */
+.group > input[type="text"]
+  margin: 0
+.group > label.accessory:first-child
+  border-left-width: 1px
+  border-radius: 0.25em 0 0 0.25em
+
+  /* style all button types */
+  /* normal */
+  /* active */
+  /* focused */
+  /* hover */
+  /* selected */
+  /* disabled */
+
+
+
+/* focused, active, hover, and checked all the same */
+button:hover, button:focus, button:active,
+.button:hover,  .button:focus, .button:active, .button:checked,
+input[type="button"]:hover, input[type="button"]:focus, input[type="button"]:active, input[type="button"]:checked
+  color: white
+
+
+
+
+  /* extra tweaks */
+.border-bottom
+  border-bottom-width: 1px
+.border-right
+  border-right-width: 1px
+.border-left
+  border-left-width: 1px
+.border-top
+  border-top-width: 1px
+
+
+.no-bg
+  border-width: 0
+  background-image: none
+  background-color: transparent
+  color: white
+  text-shadow: none
+.small
+  font-size: 0.8em
+.tiny
+  font-size: 0.7rem
+

@@ -1,192 +1,9 @@
 <html>
 <head>
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="appy-style.css">
+    <!--<link rel="stylesheet" href="appy-style.css">-->
     <link rel='stylesheet' href='foo.css'>
     <style type="text/css">
-
-        .hbox {
-            display: flex;
-            flex-direction: row;
-            border: 0px solid black;
-        }
-        .vbox {
-            display: flex;
-            flex-direction: column;
-            border: 0px solid black;
-        }
-        .toolbar {
-            border: 0px solid black;
-        }
-
-        body {
-            background-color: #888;
-        }
-
-
-        ul.tabs {
-            display: flex;
-            flex-direction: row;
-            border: 0px solid black;
-            margin: 0;
-            padding: 0.5em 1em 0em 1em;
-            background-color: #333;
-            border-bottom-width: 1px;
-        }
-        ul.tabs li {
-            display: inline-block;
-            border: 0px solid red;
-            margin: 0 0.25em 0 0.25em;
-            padding: 0.75em;
-            padding-top: 0.25em;
-            padding-bottom: 0.1em;
-            background-color: #444;
-            color: #aaa;
-            border-radius: 5px 5px 0px 0px;
-            border: 1px solid black;
-            margin-bottom: -1px;
-        }
-        ul.tabs li:hover, ul.tabs li.selected:hover {
-            background-color: #888;
-        }
-        ul.tabs li.selected {
-            background-color: #666;
-        }
-
-        .fill {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
-
-        .toolbar {
-            align-items: baseline;
-        }
-
-        .border-bottom {
-            border-bottom-width: 1px;
-        }
-        .border-right {
-            border-right-width: 1px;
-        }
-        .border-left {
-            border-left-width: 1px;
-        }
-        .border-top {
-            border-top-width: 1px;
-        }
-
-
-        .accordion-title {
-            border: 0px solid black;
-            background-color: #444;
-            color: #aaa;
-            margin: 0;
-            padding: 0;
-        }
-        .accordion-title label {
-            padding: 0;
-            margin: 0;
-        }
-        .accordion-body {
-            padding: 0.25em;
-            min-height: 10em;
-            border: 1px solid black;
-        }
-
-        .scrollpane {
-            overflow: scroll;
-        }
-
-        .toolbar button {
-            background-color: #666;
-            background-image: none;
-            border: 1px solid #222;
-            text-shadow: none;
-        }
-        .toolbar {
-            background-color: #444;
-            color: #ccc;
-        }
-        .toolbar h3 {
-            font-weight: normal;
-        }
-
-        ul.list {
-            padding: 0;
-            margin: 0;
-            background-color: #ccc;
-        }
-        ul.list li {
-            border: 0px solid black;
-            padding: 0.25em;
-            margin: 0;
-            border-bottom-width: 1px;
-        }
-        ul.list li.selected {
-            background-color: #3072b3;
-        }
-
-        .no-bg {
-            border-width: 0;
-            background-image: none;
-            background-color: transparent;
-            color: #ccc;
-            text-shadow: none;
-        }
-
-        .small {
-            font-size: 0.8rem;
-        }
-
-
-
-
-        ul.tree {
-            margin: 0;
-            padding: 0;
-        }
-        ul.tree li {
-            list-style: none;
-            margin:0;
-            padding: 0;
-        }
-
-        table.styled {
-            background-color: #444;
-            border: 0px solid black;
-            color: #ccc;
-            border-collapse: collapse;
-            font-size: 100%;
-            width: 100%;
-        }
-        table.styled thead {
-            background-color: #777;
-            border-width: 0;
-        }
-        table.styled th {
-            font-weight: normal;
-            color: #fff;
-            padding: 0.25em 0.5em;
-        }
-        table.styled td, table.styled th {
-            padding: 0.3em 0.5em;
-            border: 1px solid black;
-            border-width: 0 1px 0px 0px;
-        }
-        table.styled tr:nth-child(even) {
-            background-color: #555;
-        }
-        table.styled th.selected {
-            background-color: blue;
-        }
-
-        table.styled tr.disabled {
-            color: #666;
-        }
-
     </style>
 </head>
 <body>
@@ -204,11 +21,11 @@ build new ui mockup with:
     //accordion panels,
     //number stepper,
 
-    dialogs w/ overlays
     //tree view w/ triangles,
 
-    iTunes like table view,
+    //iTunes like table view,
 
+    dialogs w/ overlays
     variations:
     select w/o borders to go inside toolbars
     border-less buttons inside toolbars
@@ -247,6 +64,11 @@ build new ui mockup with:
                     <input type="password" value="password">
                 </div>
                 <div class="row">
+                    <label>search</label>
+                    <input type="search" value="search">
+                </div>
+
+                <div class="row">
                     <label>buttons</label>
                     <button>button</button>
                     <input type="button" value="i button">
@@ -254,14 +76,25 @@ build new ui mockup with:
                     <input type="reset"  value="reset">
                 </div>
                 <div class="row">
+                    <label>disabled</label>
+                    <button disabled>button</button>
+                    <input type="button" value="i button" disabled>
+                    <input type="submit" value="submit" disabled>
+                    <input type="reset"  value="reset" disabled>
+                </div>
+                <div class="row">
                     <label> alt check/radio</label>
-                    <input type="checkbox" value="checkbox" class="button"> checkbox
-                    <input type="radio" value="radio" class="button"> radio
+                    <input type="checkbox" value="checkbox" class="button">
+                    <input type="radio" value="radio" class="button">
+                    <input type="checkbox" value="checkbox" class="button" checked>
+                    <input type="radio" value="radio" class="button" checked>
                 </div>
                 <div class="row">
                     <label>std check/radio</label>
                     <input type="checkbox" value="checkbox"> checkbox
                     <input type="radio" value="radio"> radio
+                    <input type="checkbox" value="checkbox" checked> checkbox
+                    <input type="radio" value="radio" checked> radio
                 </div>
                 <div class="row">
                     <label>range</label>
