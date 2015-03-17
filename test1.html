@@ -43,7 +43,7 @@ build new ui mockup with:
         <button>right</button>
     </div>
     <div class="hbox grow">
-        <div class="vbox border-right">
+        <div class="vbox border-right sidebar">
             <div class="toolbar">
                 <button>new</button>
                 <button>save</button>
@@ -59,7 +59,9 @@ build new ui mockup with:
             <div class="box grow form scrollpane small">
                 <div class="row">
                     <label>text</label>
-                    <input type="text" placeholder="placeholder"/>
+                    <input type="text" placeholder="placeholder" value="text"/>
+                </div>
+                <div class="row">
                     <label>password</label>
                     <input type="password" value="password">
                 </div>
@@ -99,6 +101,8 @@ build new ui mockup with:
                 <div class="row">
                     <label>range</label>
                     <input type="range" min="0" max="100"/>
+                </div>
+                <div class="row">
                     <label>number</label>
                     <input type="number" value="8">
                 </div>
@@ -109,6 +113,8 @@ build new ui mockup with:
                 <div class="row">
                     <label>progress</label>
                     <progress min="0" max="100" value="24"></progress>
+                </div>
+                <div class="row">
                     <label>spinner</label>
                     <progress class="spinner" min="0" max="100" value="24"></progress>
                 </div>
@@ -161,9 +167,7 @@ build new ui mockup with:
                 <li>Tab 3</li>
             </ul>
             <div class="grow vbox" style="padding: 0;">
-                <textarea class="grow"
-                        style="margin: 0; background-color: #ddd;"
-                        >This is some editable text</textarea>
+                <textarea class="grow">This is some editable text</textarea>
             </div>
             <table class="grow styled">
                 <thead>
@@ -199,9 +203,16 @@ build new ui mockup with:
                 </tr>
                 </tbody>
             </table>
+            <div class="form box">
+                <div class="row">
+                    <label>some regular form components</label>
+                    <input type="text" value="a text component">
+                    <button>a button</button>
+                </div>
+            </div>
         </div>
 
-        <div class="vbox border-left">
+        <div class="vbox border-left sidebar">
             <div class="scrollpane">
                 <div class="accordion-panel">
                     <div class="accordion-title">

@@ -23,13 +23,15 @@
 
 /* reset */
 html, body, div
-  color: black
-  background-color: white
+  color: inherit
   margin: 0
   padding: 0
   font-family: sans-serif
   font-size: 100%
   border: 0 solid black
+html, body
+  background-color: white
+  color: black
 
   /* basic layout */
 .hbox
@@ -59,13 +61,6 @@ html, body, div
 
 
 
-/* basic colors */
-$base-background: #666
-$sidebar-background: #444
-$color1: #888
-$color2: #aaa
-$color3: #ccc
-$bg1: #888
 
 
 /* tabs */
@@ -234,13 +229,65 @@ input[type="radio"].button:after, input[type="checkbox"].button:after
   border-left-width: 1px
   border-radius: 0.25em 0 0 0.25em
 
-  /* style all button types */
+
+
+
+
+/* basic colors */
+$base-background: #666
+$sidebar-background: #444
+$sidebar-sub-background: #333
+$sidebar-item-background: #888
+$sidebar-color: #ccc
+$sidebar-text-background: #aaa
+$sidebar-text-color: #222
+
+$component-background: #888
+$color1: #888
+$color2: #aaa
+$color3: #ccc
+$button-color: #fcc
+
+body
+  background-color: $base-background
+.toolbar, .sidebar
+  background-color: $sidebar-background
+.accordion-title
+  background-color: $sidebar-sub-background
+table.styled, ul.list, .accordion-body
+  background-color: $component-background
+
+
+
+/* style all button types */
   /* normal */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.button
+  background-color: $button-color
+  border-radius: 0px
   /* active */
   /* focused */
   /* hover */
   /* selected */
   /* disabled */
+
+div.sidebar, div.toolbar
+  color: $sidebar-color
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  input[type="checkbox"].button,
+  input[type="radio"].button
+    background-color: $sidebar-item-background
+  label
+    color: $sidebar-color
+  input
+    background-color: $sidebar-text-background
+    color: $sidebar-text-color
 
 
 
@@ -253,7 +300,7 @@ input[type="button"]:hover, input[type="button"]:focus, input[type="button"]:act
 
 
 
-  /* extra tweaks */
+  /* ====================== extra tweaks ================== */
 .border-bottom
   border-bottom-width: 1px
 .border-right
@@ -275,3 +322,4 @@ input[type="button"]:hover, input[type="button"]:focus, input[type="button"]:act
 .tiny
   font-size: 0.7rem
 
+/* toolbar */
