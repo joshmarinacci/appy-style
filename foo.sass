@@ -18,8 +18,19 @@
   border-radius:         $radius
 
 
-
-
+@mixin flex
+  display: -webkit-flex
+  display: flex
+@mixin flex-row
+  display: -webkit-flex
+  display: flex
+  -webkit-flex-direction: row
+  flex-direction: row
+@mixin flex-col
+  display: -webkit-flex
+  display: flex
+  -webkit-flex-direction: column
+  flex-direction: column
 
 /* reset */
 html, body, div
@@ -36,12 +47,10 @@ html, body
 
   /* basic layout */
 .hbox
-  display: flex
-  flex-direction: row
+  +flex-row
   border: 0px solid black
 .vbox
-  display: flex
-  flex-direction: column
+  +flex-col
   border: 0px solid black
 
 .fill
@@ -54,24 +63,22 @@ html, body
 .scrollpane
   overflow: scroll
 .grow
+  -webkit-flex: 1
   flex: 1
+
 .toolbar, .tabs
   min-height: 2.5rem
 
 .toolbar
-  display: flex
-  flex-direction: row
+  +flex-row
   align-items: center
-
-
 
 
 
 
 /* tabs */
 .tabs
-  display: flex
-  flex-direction: row
+  +flex-row
   margin: 0
   padding: 0em 1em 0 1em
   border-bottom: 1px solid black
@@ -93,8 +100,7 @@ ul.list
     margin: 0
     background-color: #888
     color: #ddd
-    display: flex
-    flex-direction: row
+    +flex-row
     align-items: baseline
   li.selected
     background-color: #68f
@@ -211,7 +217,7 @@ input[type="checkbox"].button
   /* form layout */
 
 .row
-  display: flex
+  +flex-row
   justify-content: flex-start
   align-items: baseline
 .row > label:first-child
@@ -224,8 +230,7 @@ input[type="radio"].button:after, input[type="checkbox"].button:after
 
   /* grouped form items */
 .group
-  display: flex
-  flex-direction: row
+  +flex-row
   margin: 0 0.25em
 .group > button,
 .group > .button,
