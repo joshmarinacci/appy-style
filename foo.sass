@@ -120,33 +120,9 @@ ul.tree li
   margin: 0
   padding: 0
 
-.accordion-body
-  padding: 0
-  margin: 0
 
 
   /* sortable table */
-table.styled
-  border-collapse: collapse
-  font-size: 100%
-  width: 100%
-
-table.styled thead
-  border-width: 0
-
-table.styled th
-  font-weight: normal
-  padding: 0.25em 0.5em
-table.styled td, table.styled th
-  padding: 0.3em 0.5em
-  border-width: 0 1px 0 0
-
-table.styled tr:nth-child(even)
-  background-color: gray
-table.styled th.selected
-  background-color: gray
-table.styled tr.disabled
-  color: black
 
 
 .accordion-panel
@@ -156,20 +132,15 @@ table.styled tr.disabled
     color: white
     margin: 0
     padding: 0.15em
-    border: 0px solid brown
+    border: 0 solid brown
     button
-      border: 0px solid red
+      border: 0 solid red
       background-color: transparent
       padding: 0
       margin: 0
   .accordion-body
-    padding: 0em
-    margin: 0em
-
-
-
-
-
+    padding: 0
+    margin: 0
 
 /* =============== forms  ================ */
 
@@ -407,6 +378,9 @@ input:focus, textarea:focus
   /* ============= table styling  ============= */
 table.styled
   background-color: black
+  border-collapse: collapse
+  font-size: 100%
+  width: 100%
   td,th
     border: 1px solid #222
     border-width: 0px 1px 0px 0px
@@ -430,7 +404,6 @@ table.styled
     tr.disabled
       td
         color: #888
-
 
   /* ====================== extra tweaks ================== */
 .border-bottom
@@ -491,18 +464,15 @@ table.styled
   border-radius: 1em
   min-width: 10em
   display: none
-
-
-.dropdown .list.menu
-  margin: 0.75em 0
-  background-color: #444
-  li
+  .list.menu
+    margin: 0.75em 0
     background-color: #444
-    padding: 0.25em 0.5em
-  li:hover
-    background-color: #28f
-    color: #fff
-
+    li
+      background-color: #444
+      padding: 0.25em 0.5em
+    li:hover
+      background-color: #28f
+      color: #fff
 
 
 
