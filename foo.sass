@@ -384,26 +384,25 @@ table.styled
   td,th
     border: 1px solid #222
     border-width: 0 1px 0 0
-    color: white
+    padding: 0.2em 0.5em
   thead
     th
       background-color: #666
       color: #fff
+      font-weight: normal
+      text-align: left
     th.selected
       background-color: $sidebar-selection-background
   tbody
-    td
-      color: #ddd
-      background-color: #444
+    color: #ddd
+    background-color: #444
     tr:nth-child(even)
-      td
-        background-color: #333
+      background-color: #333
     tr.selected
-      td
-        background-color: $sidebar-selection-background
+      background-color: $sidebar-selection-background
+      color: #222
     tr.disabled
-      td
-        color: #888
+      color: #888
 
   /* ====================== extra tweaks ================== */
 .border-bottom
