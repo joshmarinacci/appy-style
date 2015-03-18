@@ -33,17 +33,32 @@ build new ui mockup with:
     pop-down with arrow
     active button
 -->
+<div class="dialog vbox">
+    <div class="hbox header">
+        <button class="fa fa-close"></button>
+        <p class="grow" style="text-align: center">cool dialog</p>
+    </div>
+    <div class="vbox body grow">
+
+    </div>
+    <div class="hbox footer">
+        <span class="grow"></span>
+        <button>cancel</button>
+        <button>okay</button>
+    </div>
+</div>
+
 <div class="vbox fill">
     <div class="toolbar border-bottom">
-        <button class="fa fa-bars"></button>
+        <button class="fa fa-bars fa-2x nobg"></button>
         <h3>Rad App</h3>
         <label class="grow"></label>
         <label>Test for AppyStyle</label>
         <label class="grow"></label>
-        <button>right</button>
+        <button class="fa fa-caret-square-o-right fa-2x nobg"></button>
     </div>
     <div class="hbox grow">
-        <div class="vbox border-right sidebar"
+        <div class="vbox border-right"
              style="min-width: 500px"
                 >
             <div class="toolbar border-bottom">
@@ -53,12 +68,12 @@ build new ui mockup with:
                 <button class="fa fa-close"></button>
             </div>
             <ul class="list lined">
-                <li><span class="grow">list item</span> <button class="fa fa-eye"></button></li>
+                <li><span class="grow">list item</span> <button class="fa fa-eye nobg"></button></li>
                 <li class="selected"><span class="grow">list item</span> <button class="fa fa-eye"></button></li>
                 <li><span class="grow">list item</span> <button class="fa fa-eye"></button></li>
                 <li><span class="grow">list item</span> <button class="fa fa-eye"></button></li>
             </ul>
-            <div class="box grow form scrollpane">
+            <div class="box grow form scrollpane sidebar">
                 <div class="row">
                     <label>text</label>
                     <input type="text" placeholder="placeholder" value="text"/>
@@ -156,7 +171,33 @@ build new ui mockup with:
                     <label>dropdown</label>
                     <div class="group">
                         <button>button</button>
-                        <button class="fa fa-caret-down"></button>
+                        <button class="fa fa-caret-down">
+                            <div class="dropdown">
+                                <ul class="list menu">
+                                    <li>foo</li>
+                                    <li>bar</li>
+                                    <li>baz</li>
+                                </ul>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <label>group</label>
+                    <div class="group">
+                        <button>b1</button>
+                        <button>b2</button>
+                        <button>b3</button>
+                        <button>b4</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <label>group</label>
+                    <div class="group">
+                        <input type="radio" name="radtest1" value="r1" class="button">
+                        <input type="radio" name="radtest1" value="r2" class="button">
+                        <input type="radio" name="radtest1" value="r3" class="button">
+                        <input type="radio" name="radtest1" value="r4" class="button" checked>
                     </div>
                 </div>
             </div>
