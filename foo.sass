@@ -80,7 +80,7 @@ html, body
 .tabs
   +flex-row
   margin: 0
-  padding: 0em 1em 0 1em
+  padding: 0 1em 0 1em
   border-bottom: 1px solid black
   align-items: flex-end
 
@@ -88,7 +88,7 @@ html, body
   display: inline-block
   padding: 0.5em 0.75em 0.1em
   border-radius: 5px 5px 0 0
-  margin: 0.5em 0.5em 0em 0.5em
+  margin: 0.5em 0.5em 0 0.5em
 
 
   /* list */
@@ -383,7 +383,7 @@ table.styled
   width: 100%
   td,th
     border: 1px solid #222
-    border-width: 0px 1px 0px 0px
+    border-width: 0 1px 0 0
     color: white
   thead
     th
@@ -478,8 +478,7 @@ table.styled
 
 /* grouped form items */
 .group
-  display: flex
-  flex-direction: row
+  +flex-row
   margin: 0 0.25em
   position: relative
 .group > button,
