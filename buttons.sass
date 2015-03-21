@@ -1,0 +1,59 @@
+input[type="radio"].button,
+input[type="checkbox"].button
+  -webkit-appearance: none
+  border: 1px solid black
+  background: white
+  color: black
+
+
+input[type="radio"].button:after,
+input[type="checkbox"].button:after
+  content: attr(value)
+
+
+@mixin button-base($bg,$text)
+  font-family: sans-serif
+  font-style: normal
+  font-weight: normal
+  font-variant: normal
+  font-size: 100%
+  min-width: 1em
+  margin: 0.25em
+  display: inline-block
+  line-height: 1.3em
+  vertical-align: baseline
+  border: 1px solid black
+  color: $text
+  background-color: $bg
+  border-radius: 5px
+  padding: 0.25em 1em
+  outline: none
+  text-align: center
+  &:hover
+    background-color: lighten($bg,10%)
+  &:active
+    background-color: lighten($bg,20%)
+  &:disabled
+    color: lighten($bg,20%)
+  &:disabled:hover
+    background-color: $bg
+
+button, input[type='submit'], input[type='reset'], input[type='button'], input[type='checkbox'].button, input[type='radio'].button
+  @include button-base(#999,#fff)
+
+.sidebar
+  background-color: #333
+  button, input[type='submit'], input[type='reset'], input[type='button'], input[type='checkbox'].button, input[type='radio'].button
+    @include button-base(#444,#ddd)
+
+.toolbar
+  button, input[type='submit'], input[type='reset'], input[type='button'], input[type='checkbox'].button, input[type='radio'].button
+    @include button-base(#444,#ddd)
+
+.sidebar .toolbar
+  background-color: #000
+  label
+    color: #888
+  button, input[type='submit'], input[type='reset'], input[type='button'], input[type='checkbox'].button, input[type='radio'].button
+    @include button-base(#000,#777)
+
