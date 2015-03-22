@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="base.css"/>
+    <link rel="stylesheet" href="buttons.css"/>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+</head>
+<body>
+
+<div class="vbox fill">
+    <div class="toolbar">
+        <label>toolbar</label>
+        <button>button</button>
+        <input type="checkbox" class="button" value="cool checkbox"/>
+        <input type="text"/>
+    </div>
+    <div class="hbox grow">
+        <div class="vbox sidebar border-right">
+            <h3>left column</h3>
+            <button>button</button>
+            <button disabled>disabled</button>
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+            <input type="button" value="button">
+            <input type="checkbox" class="button" value="checkbox">
+            <input type="radio" class="button" value="radiobutton">
+            <button class="fa fa-bars">asdf</button>
+        </div>
+        <div class="vbox grow">
+            <h3>center column</h3>
+            <div class="form">
+                <div class="row">
+                    <label>buttons</label>
+                    <button>button</button>
+                    <button disabled>disabled</button>
+                    <button class="fa fa-bars">asdf</button>
+                </div>
+                <div class="row">
+                    <label>input buttons</label>
+                    <input type="submit" value="submit">
+                    <input type="reset" value="reset">
+                    <input type="button" value="button">
+                </div>
+                <div class="row">
+                    <label>checkbox /radio buttons</label>
+                    <input type="checkbox" class="button" value="checkbox">
+                    <input type="checkbox" class="button" value="checked" checked>
+                    <input type="radio" class="button" value="radiobutton" name="center_radio">
+                    <input type="radio" class="button" value="radiobutton" name="center_radio" checked>
+                </div>
+                <div class="row">
+                    <label>checkbox group</label>
+                    <div class="group">
+                        <input type="checkbox" class="button" value="checkbox">
+                        <input type="checkbox" class="button" value="checked" checked>
+                        <input type="checkbox" class="button" value="checkbox">
+                        <input type="checkbox" class="button" value="checkbox">
+                    </div>
+                </div>
+                <div class="row">
+                    <label>foo</label>
+                    <label>bar</label>
+                </div>
+                <div class="row">
+                    <label>foo</label>
+                    <label>bar</label>
+                </div>
+                <div class="row">
+                    <label>radio group</label>
+                    <div class="group">
+                        <input type="radio" class="button" value="radio" name="center_radio_1">
+                        <input type="radio" class="button" value="checked" checked name="center_radio_1">
+                        <input type="radio" class="button" value="radio" name="center_radio_1">
+                        <input type="radio" class="button" value="radio" name="center_radio_1">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="vbox sidebar border-left">
+            <h3>right column</h3>
+            <button>button</button>
+            <div class="toolbar">
+                <label>toolbar</label>
+                <button>button</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

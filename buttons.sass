@@ -1,3 +1,19 @@
+/*
+ * fix newly discovered bugs in appy-style.
+ //* padding around labels.
+ //* don't make li be flex,
+ //* 'new post' not getting hover effects,
+ //* line-height of label only rows,
+ //* label in toolbar padding.
+ //* buttons in non-sidebar.
+ //* consolidate into sass rules
+ * width of first column. extra padding on the end.
+ */
+
+@import "base"
+
+
+
 input[type="radio"].button,
 input[type="checkbox"].button
   -webkit-appearance: none
@@ -12,10 +28,6 @@ input[type="checkbox"].button:after
 
 
 @mixin button-base($bg,$text)
-  font-family: sans-serif
-  font-style: normal
-  font-weight: normal
-  font-variant: normal
   font-size: 100%
   min-width: 1em
   margin: 0.25em
@@ -33,6 +45,12 @@ input[type="checkbox"].button:after
     background-color: lighten($bg,10%)
   &:active
     background-color: lighten($bg,20%)
+  &:checked
+    background-color: green
+    color: white
+  &:checked:hover
+    background-color: lighten(green,10%)
+    color: white
   &:disabled
     color: lighten($bg,20%)
   &:disabled:hover
@@ -42,11 +60,14 @@ button, input[type='submit'], input[type='reset'], input[type='button'], input[t
   @include button-base(#999,#fff)
 
 .sidebar
-  background-color: #333
+  background-color: #666
+  color: #ddd
   button, input[type='submit'], input[type='reset'], input[type='button'], input[type='checkbox'].button, input[type='radio'].button
-    @include button-base(#444,#ddd)
+    @include button-base(#888,#ddd)
 
 .toolbar
+  background-color: #333
+  color: #ccc
   button, input[type='submit'], input[type='reset'], input[type='button'], input[type='checkbox'].button, input[type='radio'].button
     @include button-base(#444,#ddd)
 
@@ -57,3 +78,54 @@ button, input[type='submit'], input[type='reset'], input[type='button'], input[t
   button, input[type='submit'], input[type='reset'], input[type='button'], input[type='checkbox'].button, input[type='radio'].button
     @include button-base(#000,#777)
 
+
+/* form layout */
+.row
+  +flex-row
+  justify-content: flex-start
+  align-items: baseline
+.row > label:first-child
+  text-align: right
+  min-width: 33%
+
+
+/* grouped form items */
+.group
+  +flex-row
+  margin: 0 0.25em
+  position: relative
+.group > button,
+.group > input[type="checkbox"].button,
+.group > input[type="radio"].button,
+.group > input[type="button"]
+  border-width: 1px 1px 1px 0px
+  margin: 0
+  border-radius: 0
+  padding: 0.25em 0.5em
+
+.group > button:first-child,
+.group > input[type="text"]:first-child,
+.group > input[type="button"]:first-child,
+.group > input[type="checkbox"].button:first-child,
+.group > input[type="radio"].button:first-child
+  border-left-width: 1px
+  border-radius: 0.25em 0 0 0.25em
+
+.group > button:last-child,
+.group > input[type="button"]:last-child,
+.group > input[type="checkbox"].button:last-child,
+.group > input[type="radio"]:last-child
+  border-radius: 0 0.25em 0.25em 0
+
+/* group accessories */
+.group > input[type="text"]
+  margin: 0
+.group > label.accessory:first-child
+  border-left-width: 1px
+  border-radius: 0.25em 0 0 0.25em
+
+
+
+.toolbar .nobg
+  border: 0px solid red
+  background-color: transparent

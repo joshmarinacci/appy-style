@@ -1,0 +1,122 @@
+@mixin flex
+  display: -webkit-flex
+  display: flex
+@mixin flex-row
+  display: -webkit-flex
+  display: flex
+  -webkit-flex-direction: row
+  flex-direction: row
+@mixin flex-col
+  display: -webkit-flex
+  display: flex
+  -webkit-flex-direction: column
+  flex-direction: column
+
+/* reset */
+html, body, div
+  color: inherit
+  margin: 0
+  padding: 0
+  font-family: sans-serif
+  font-size: 100%
+  border: 0 solid black
+html, body
+  background-color: #ccc
+  color: black
+  font-size: 10pt
+
+/* basic layout */
+.hbox
+  +flex-row
+  border: 0 solid black
+.vbox
+  +flex-col
+  border: 0 solid black
+
+.fill
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+
+.scrollpane
+  overflow: scroll
+.grow
+  -webkit-flex: 1
+  flex: 1
+
+.toolbar, .tabs
+  min-height: 2.5rem
+
+.toolbar
+  +flex-row
+  align-items: center
+
+
+
+
+// ========= reset ============
+
+input, button, textarea, select
+  font-style: normal
+  font-weight: normal
+  font-variant: normal
+  font-size: 100%
+  min-width: 1em
+  padding: 0.25em
+  margin: 0.25em
+  display: inline-block
+  line-height: 1.3em
+  vertical-align: baseline
+  border-radius: 0
+  border: 1px solid black
+textarea
+  margin: 0
+
+button,
+.button,
+.accessory,
+input[type="button"],
+input[type="submit"],
+input[type="reset"]
+  outline: none
+  text-align: center
+  border-radius: 0
+  border: 1px solid black
+
+input[type='text'],
+input[type='search'],
+input[type="radio"].button,
+input[type="checkbox"].button
+  -webkit-appearance: none
+  border: 1px solid black
+  background: white
+  color: black
+
+label
+  margin: 0.5em 0.5em
+
+// focus ring
+button:focus, input:focus
+  outline: none
+  box-shadow: 0 0 10px #ff7820
+
+  // ============ extras ===========
+
+.border-bottom
+  border-bottom-width: 1px
+.border-right
+  border-right-width: 1px
+.border-left
+  border-left-width: 1px
+.border-top
+  border-top-width: 1px
+.border-none
+  border-width: 0
+
+
+.small
+  font-size: 0.8em
+.tiny
+  font-size: 0.7rem
