@@ -6,7 +6,7 @@
     "Josh Marinacci <joshua@marinacci.org>"
   ],
   "description": "css framework for desktop webapps",
-  "main": "appy-style.css",
+  "main": "dist.css",
   "moduleType": [
     "node"
   ],
