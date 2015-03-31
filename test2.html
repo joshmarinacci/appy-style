@@ -6,8 +6,14 @@
     <link href="newstart.css" rel="stylesheet">
     <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
     <style type="text/css">
-        .hidden {
-            display: none;
+        .photo {
+            width: 20em;
+            height: 20em;
+            background: green;
+        }
+        .joshform {
+            width: 30em;
+            border: 0px solid red;
         }
     </style>
 </head>
@@ -43,12 +49,72 @@
 
         <div class="grow vbox">
             <div class="tabbar">
-                <button id="tab1" class="tabs selected">tab 1</button>
-                <button id="tab2" class="tabs">striped table</button>
-                <button id="tab3" class="tabs">tab 3</button>
+                <button id="tab1" class="tabs">Photo Grid</button>
+                <button id="tab2" class="tabs">Striped Table</button>
+                <button id="tab3" class="tabs selected">Form Content</button>
             </div>
-            <div class="grow scroll contents" id="content1">
-                this is content one
+            <div class="grow scroll flow contents hidden" id="content1">
+                <div class="panel">
+                    <header>First good photo</header>
+                    <div class="photo">cool photo here</div>
+                    <footer>footer</footer>
+                </div>
+                <div class="panel">
+                    <header>First good photo</header>
+                    <div class="photo">cool photo here</div>
+                    <footer>footer</footer>
+                </div>
+                <div class="panel">
+                    <header>First good photo</header>
+                    <div class="photo">cool photo here</div>
+                    <footer>footer</footer>
+                </div>
+                <div class="panel">
+                    <header>First good photo</header>
+                    <div class="photo">cool photo here</div>
+                    <footer>footer</footer>
+                </div>
+                <div class="panel">
+                    <header>First good photo</header>
+                    <div class="photo">cool photo here</div>
+                    <footer>footer</footer>
+                </div>
+                <div class="panel">
+                    <header>First good photo</header>
+                    <div class="photo">cool photo here</div>
+                    <footer>footer</footer>
+                </div>
+                <div class="panel">
+                    <header>First good photo</header>
+                    <div class="photo">cool photo here</div>
+                    <footer>footer</footer>
+                </div>
+                <div class="panel">
+                    <header>First good photo</header>
+                    <div class="photo">cool photo here</div>
+                    <footer>footer</footer>
+                </div>
+                <div class="panel">
+                    <header>First good photo</header>
+                    <div class="photo">cool photo here</div>
+                    <footer>footer</footer>
+                </div>
+                <div class="panel">
+                    <header>First good photo</header>
+                    <div class="photo">cool photo here</div>
+                    <footer>footer</footer>
+                </div>
+                <div class="panel">
+                    <header>First good photo</header>
+                    <div class="photo">cool photo here</div>
+                    <footer>footer</footer>
+                </div>
+                <div class="panel">
+                    <header>First good photo</header>
+                    <div class="photo">cool photo here</div>
+                    <footer>footer</footer>
+                </div>
+
             </div>
             <div class="grow scroll contents hidden" id="content2">
                 <table class="striped" id="table">
@@ -98,8 +164,35 @@
                 </table>
 
             </div>
-            <div class="grow scroll contents hidden" id="content3">
-                this is content 3
+            <div class="grow scroll contents" id="content3">
+                <div class="form joshform">
+                    <div class="row">
+                        <label>username</label>
+                        <input type="text" placeholder="username">
+                    </div>
+                    <div class="row">
+                        <label>password</label>
+                        <input type="password" value="password">
+                    </div>
+                    <div class="row">
+                        <label>email address</label>
+                        <input type="email" placeholder="an email address">
+                    </div>
+                    <div class="row">
+                        <label>some buttons</label>
+                        <button>button</button>
+                        <button class="selected">selected</button>
+                        <button disabled>disabled</button>
+                    </div>
+                    <div class="row">
+                        <label>grouped</label>
+                        <div class="group">
+                            <button>do it</button>
+                            <button>again</button>
+                            <button>with feeling</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -110,7 +203,7 @@
                 <div class="row">
                     <label>buttons</label>
                     <button>button</button>
-                    <button class="fa fa-bars">button</button>
+                    <button class="fa fa-bars"> button</button>
                 </div>
                 <div class="row">
                     <label>input buttons</label>
@@ -120,18 +213,18 @@
                 </div>
                 <div class="row">
                     <label>checkbox /radio buttons</label>
-                    <input type="checkbox" class="button" value="checkbox">
-                    <input type="checkbox" class="button" value="checked" checked>
-                    <input type="radio" class="button" value="radiobutton" name="center_radio">
-                    <input type="radio" class="button" value="radiobutton" name="center_radio" checked>
+                    <input type="checkbox" class="button" value="check">
+                    <input type="checkbox" class="button" value="check" checked>
+                    <input type="radio" class="button" value="radio1" name="center_radio">
+                    <input type="radio" class="button" value="radio2" name="center_radio" checked>
                 </div>
                 <div class="row">
                     <label>checkbox group</label>
                     <div class="group">
-                        <input type="checkbox" class="button" value="checkbox">
+                        <input type="checkbox" class="button" value="check">
                         <input type="checkbox" class="button" value="checked" checked>
-                        <input type="checkbox" class="button" value="checkbox">
-                        <input type="checkbox" class="button" value="checkbox">
+                        <input type="checkbox" class="button" value="check">
+                        <input type="checkbox" class="button" value="check">
                     </div>
                 </div>
                 <div class="row">
@@ -234,13 +327,13 @@
         </div>
 
     </div>
-    <div class="footer">
+    <footer>
         <span>status bar</span>
         <span class="grow"></span>
         <span>centered</span>
         <span class="grow"></span>
         <span>right</span>
-    </div>
+    </footer>
 
 </div>
 

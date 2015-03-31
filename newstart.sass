@@ -20,13 +20,15 @@
   color: inherit
   font-family: sans-serif
   font-size: 100%
-  border: 0 solid black
+  border-color: inherit
+
 html, body
   background-color: white
   color: black
   font-size: 10pt
   margin: 0
   padding: 0
+
 
 
   // basic layout
@@ -57,17 +59,19 @@ $fg: #222222
 $ac: #2266ff
 
 //twilight
-//$bg: #eed6bc
-//$fg: #754
-//$ac: #ff431e
+//$bg: #eee3d7
+//$fg: #5e3e2f
+//$ac: #ff2f25
+
+
+
+$border: darken($bg,30%)
 
 html, body
   background-color: $bg
   color: $fg
+  border-color: $border
 
-button
-  background-color: $ac
-  color: $bg
 
 
 .titlebar
@@ -76,20 +80,23 @@ button
   padding: 0.5em
 header
   +flex-row
+  border-style: solid
   border-width: 0px 0px 1px 0px
   background-color: darken($bg, 10%)
   padding: 0.5em
 .sidebar header
   background-color: darken($bg, 20%)
 
-.footer
+footer
   +flex-row
+  border-style: solid
   border-width: 1px 0px 0px 0px
   background-color: darken($bg, 10%)
   padding: 0.5em
 .sidebar
   background-color: darken($bg, 10%)
   min-width: 20em
+  border-style: solid
 .sidebar.left
   border-width: 0px 1px 0 0
 .sidebar.right
@@ -97,21 +104,129 @@ header
 
 
 
+.panel
+  display: inline-block
+  margin: 2em
+  border-style: solid
+  border-width: 1px
+
+
+.flow
+  +flex-row
+  flex-wrap: wrap
+  align-content: flex-start
+  align-items: flex-start
+  justify-content: space-around
+
+
+
+
+
+//form elements
+
+.form
+  +flex-col
+.row
+  +flex-row
+  align-items: baseline
+
+.row label:first-child
+  width: 30%
+  text-align: right
+
+label, input
+  color: $fg
+  padding: 0.25em 0.5em
+  margin: 0.5em
+input
+  background-color: $bg
+  border: 1px solid $fg
+  outline: none
+
+
+
+@mixin button-base($bg,$text, $accent)
+  display: inline-block
+  line-height: 1.3em
+  vertical-align: baseline
+  border: 1px solid $fg
+  color: $text
+  background-color: $bg
+  padding: 0.25em 0.5em
+  margin: 0.5em
+  outline: none
+  text-align: center
+  font-weight: bold
+  &:focus
+    box-shadow: 0 0 10px $accent
+  &:hover
+    background-color: darken($bg,10%)
+  &:active
+    background-color: darken($bg,20%)
+  &:checked, &.selected
+    background-color: $accent
+    color: $bg
+  &:checked:hover, &.selected:hover
+    background-color: lighten($accent,10%)
+    color: $bg
+  &:disabled
+    background-color: darken($bg,20%)
+    color: lighten($fg,20%)
+
+button, input[type='submit'], input[type='reset'], input[type='button']
+  @include button-base($bg,$fg,$ac)
+
+
+input[type="radio"].button,
+input[type="checkbox"].button
+  -webkit-appearance: none
+  @include button-base($bg, $fg, $ac)
+
+input[type="radio"].button:after,
+input[type="checkbox"].button:after
+  content: attr(value)
+
+
+
+
+
+.group
+  +flex-row
+  margin: 0.5em
+.group button, .group input
+  margin: 0
+  padding: 0.25em 0.5em
+  border-width: 1px 1px 1px 0px
+
+.group button:first-child, .group input:first-child
+  border-left-width: 1px
+
+header button
+  border-width: 0
+
+
+
+
 .tabbar
   +flex-row
   align-items: flex-end
   background-color: darken($bg,20%)
+  border: 1px solid $border
+  border-width: 0px 0px 1px 0px
 .tabbar button
   margin: 0.5em 0.5em 0 0.5em
   padding: 0.5em 1em
+  background-color: darken($bg, 10%)
+  border-bottom-width: 0px
 .tabbar button.selected
   background-color: $bg
   color: $fg
-
+  margin-bottom: -1px
+.tabbar button:hover
+  background-color: $bg
 
 .content
   padding: 0.5em
-
 
 
 
@@ -131,6 +246,8 @@ ul.list ul
   padding: 0
   padding-left: 2em
 
+ul.list li:hover
+  background-color: lighten($ac,30%)
 
 .list.lined li
   border-width: 0 0 1px 0
@@ -140,6 +257,7 @@ ul.list ul
 table
   border-collapse: collapse
 table td, table th
+  border-style: solid
   border-width: 0px 1px 0 0
   padding: 0.5em 1em
   font-weight: normal
@@ -147,20 +265,20 @@ table th
   background-color: darken($bg,10%)
 table.striped tr:nth-child(even)
   background-color: darken($bg,5%)
+table tr:hover, table tr:nth-child(even):hover
+  background-color: lighten($ac,30%)
 
-
-
-
-
-
-
-.debug
-  border: 1px solid red !important
 
 
 
 
 //extra styles
+.debug
+  border: 1px solid red !important
+
+.hidden
+  display: none !important
+
 
 //list header
 li.header
