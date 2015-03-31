@@ -6,11 +6,13 @@
     <link href="newstart.css" rel="stylesheet">
     <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
     <style type="text/css">
-
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
-<div class="vbox fill debug">
+<div class="vbox fill">
     <div class="titlebar">Title of the window</div>
     <header><button>button</button><label>a label</label><button class="fa fa-eye"></button></header>
     <div class="grow hbox">
@@ -40,8 +42,15 @@
         </div>
 
         <div class="grow vbox">
-            <div class="tabbar"><button>tab 1</button><button class="selected">tab 2</button><button>tab 3</button></div>
-            <div class="grow scroll">
+            <div class="tabbar">
+                <button id="tab1" class="tabs selected">tab 1</button>
+                <button id="tab2" class="tabs">striped table</button>
+                <button id="tab3" class="tabs">tab 3</button>
+            </div>
+            <div class="grow scroll contents" id="content1">
+                this is content one
+            </div>
+            <div class="grow scroll contents hidden" id="content2">
                 <table class="striped" id="table">
                     <thead>
                         <th style="min-width: 10em">foo foo foo foo</th>
@@ -88,6 +97,9 @@
                     </tbody>
                 </table>
 
+            </div>
+            <div class="grow scroll contents hidden" id="content3">
+                this is content 3
             </div>
         </div>
 
@@ -233,6 +245,7 @@
 </div>
 
 </body>
+<script src="bower_components/jquery/dist/jquery.js"></script>
 <script type="text/javascript">
     var tbody = document.getElementById("tbody");
     var str = "";
@@ -240,5 +253,14 @@
         str += "<tr><td>foo</td><td>"+Math.floor(Math.random()*1000)+"</td><td>foo</td><td>foo</td></tr>";
     }
     tbody.innerHTML = str;
+
+    [1,2,3].forEach(function(n) {
+        $("#tab"+n).click(function() {
+            $(".contents").addClass('hidden');
+            $("#content"+n).removeClass('hidden');
+            $(".tabs").removeClass('selected');
+            $("#tab"+n).addClass('selected');
+        });
+    });
 </script>
 </html>
