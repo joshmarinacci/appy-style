@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="dist.css"/>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <style type="text/css">
+        .align-center {
+            align-items: center;
+        }
+
+        #backward-button, #forward-button { font-size: 150%; }
+        #play-button {
+            font-size: 200%;
+        }
+        #volume { width: 5em; }
+
+        #music-display {
+            background-color: white;
+            width: 20em;
+            height: 4em;
+            border: 1px solid black;
+            border-radius: 1em;
+            padding: 0.5em;
+            margin: 1em;
+        }
+        #display-song { font-size: 200%; line-height: 100%; padding-bottom: 0.5em; }
+        #display-artist { font-size: 120% }
+
+
+        header {
+            padding: 0.5em 1em;
+            background-color: black;
+            color: white;
+        }
+
+        ul.list li.header {
+            text-transform: uppercase;
+            font-size: 90%;
+            color: #aaa;
+        }
+        ul.list li {
+            padding-left: 1em;
+        }
+        ul.list li.header {
+            padding-left: 0em;
+        }
+        table {
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: 1px solid black;
+            padding: 0.25em 0.5em;
+            border-width: 0px 1px 0px 0px;
+
+        }
+        table tr {
+            background-color: gray;
+        }
+        table tr:nth-child(even) {
+            background-color: white;
+        }
+        table th {
+            background-color: #777;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="fill vbox">
+    <div class="toolbar">
+        <button>itunes</button>
+        <button>electron</button>
+        <button>browser</button>
+    </div>
+    <div class="vbox itunes grow">
+        <div class="hbox align-center toolbar">
+            <button class="fa fa-backward" id="backward-button"></button>
+            <button class="fa fa-play" id="play-button"></button>
+            <button class="fa fa-forward" id="forward-button"></button>
+            <label class="fa fa-volume-down"></label>
+            <input type="range" min="0" max="100" id="volume">
+            <label class="fa fa-volume-up"></label>
+            <span class="grow"></span>
+            <div class="vbox align-center" id="music-display">
+                <span class="grow" id="display-song">song title</span>
+                <span id="display-artist">artist - album</span>
+                <progress min="0" max="100" value="20">
+            </div>
+            <span class="grow"></span>
+            <span class="grow"></span>
+            <input type="search" placeholder="albums, artists, songs">
+        </div>
+        <div class="hbox grow">
+            <div class="vbox">
+                <header>Sources</header>
+                <ul class="grow list scrollpane">
+                    <li class="header">Library</li>
+                    <li><i class="fa fa-music"></i> Music</li>
+                    <li><i class="fa fa-film"></i> Movies</li>
+                    <li><i class="fa fa-rocket"></i> Podcasts</li>
+                    <li>item 3</li>
+                    <li class="header">Playlists</li>
+                    <li><i class="fa fa-folder"></i> Christmas Best</li>
+                    <li><i class="fa fa-folder"></i> Number One Hits</li>
+                    <li><i class="fa fa-folder"></i> Top ten most played</li>
+                    <li><i class="fa fa-folder"></i> Christmas Best</li>
+                    <li><i class="fa fa-folder"></i> Number One Hits</li>
+                    <li><i class="fa fa-folder"></i> Top ten most played</li>
+                    <li><i class="fa fa-folder"></i> Christmas Best</li>
+                    <li><i class="fa fa-folder"></i> Number One Hits</li>
+                    <li><i class="fa fa-folder"></i> Top ten most played</li>
+                    <li><i class="fa fa-folder"></i> Christmas Best</li>
+                    <li><i class="fa fa-folder"></i> Number One Hits</li>
+                    <li><i class="fa fa-folder"></i> Top ten most played</li>
+                    <li><i class="fa fa-folder"></i> Christmas Best</li>
+                    <li><i class="fa fa-folder"></i> Number One Hits</li>
+                    <li><i class="fa fa-folder"></i> Top ten most played</li>
+                    <li><i class="fa fa-folder"></i> Christmas Best</li>
+                    <li><i class="fa fa-folder"></i> Number One Hits</li>
+                    <li><i class="fa fa-folder"></i> Top ten most played</li>
+                    <li><i class="fa fa-folder"></i> Christmas Best</li>
+                    <li><i class="fa fa-folder"></i> Number One Hits</li>
+                    <li><i class="fa fa-folder"></i> Top ten most played</li>
+                    <li><i class="fa fa-folder"></i> Christmas Best</li>
+                    <li><i class="fa fa-folder"></i> Number One Hits</li>
+                    <li><i class="fa fa-folder"></i> Top ten most played</li>
+                    <li><i class="fa fa-folder"></i> Christmas Best</li>
+                    <li><i class="fa fa-folder"></i> Number One Hits</li>
+                    <li><i class="fa fa-folder"></i> Top ten most played</li>
+                    <li><i class="fa fa-folder"></i> Christmas Best</li>
+                    <li><i class="fa fa-folder"></i> Number One Hits</li>
+                    <li><i class="fa fa-folder"></i> Top ten most played</li>
+                </ul>
+            </div>
+
+            <div class="vbox children-stretch">
+                <table class="grow">
+                    <head>
+                        <th>Name</th>
+                        <th>Time</th>
+                        <th>Artist</th>
+                        <th>Album</th>
+                        <th>Genre</th>
+                    </head>
+                    <tbody>
+                    <tr>
+                        <td>Yellow Submarine</td>
+                        <td>1:00</td>
+                        <td>The Beatles</td>
+                        <td>Yellow Submarine</td>
+                        <td>Rock</td>
+                    </tr>
+                    <tr>
+                        <td>Supermassive Black Hole</td>
+                        <td>5:46</td>
+                        <td>Muse</td>
+                        <td>Blackholes and Revelations</td>
+                        <td>Metal</td>
+                    </tr>
+                    <tr>
+                        <td>Yellow Submarine</td>
+                        <td>1:00</td>
+                        <td>The Beatles</td>
+                        <td>Yellow Submarine</td>
+                        <td>Rock</td>
+                    </tr>
+                    <tr>
+                        <td>Supermassive Black Hole</td>
+                        <td>5:46</td>
+                        <td>Muse</td>
+                        <td>Blackholes and Revelations</td>
+                        <td>Metal</td>
+                    </tr>
+                    <tr>
+                        <td>Yellow Submarine</td>
+                        <td>1:00</td>
+                        <td>The Beatles</td>
+                        <td>Yellow Submarine</td>
+                        <td>Rock</td>
+                    </tr>
+                    <tr>
+                        <td>Supermassive Black Hole</td>
+                        <td>5:46</td>
+                        <td>Muse</td>
+                        <td>Blackholes and Revelations</td>
+                        <td>Metal</td>
+                    </tr>
+                    <tr>
+                        <td>Yellow Submarine</td>
+                        <td>1:00</td>
+                        <td>The Beatles</td>
+                        <td>Yellow Submarine</td>
+                        <td>Rock</td>
+                    </tr>
+                    <tr>
+                        <td>Supermassive Black Hole</td>
+                        <td>5:46</td>
+                        <td>Muse</td>
+                        <td>Blackholes and Revelations</td>
+                        <td>Metal</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <button>add playlist</button>
+            <button>random</button>
+            <button>repeat</button>
+            <span class="grow"></span>
+            <span>3333 items, 105 hrs total time, 21GB</span>
+            <button>eject</button>
+        </div>
+    </div>
+</div>
+
+<!--
+itunes:
+    toolbar with controls and search
+    source list with special dividers
+electron
+    toolbar for compiling
+    tab bar for choosing documents
+    sidebar for tree of files and projects
+webbrowser
+    sidebar for bookmarks
+    url bar
+    status bar
+    popover for downloads
+
+
+
+
+button groups
+table with focus support. arrows to go up and down? selected row, highlighted row, focused control/row?
+textfield with button, group
+tag completion
+dropdowns
+slider buttons
+props sheet with narrow dropdowns, number spinners, progress spinners
+
+
+
+selected:
+    the currently selected item within a set of controls, or within a single complex control
+focused:
+    the currently focused control. this indicates that keyboard action will affect this control
+hovered:
+    indicates which control under the mouse will be affected
+active:
+    indicates the control is in the process of being dragged or clicked.
+disabled:
+    cannot be interacted with, though it still may update itself
+primary:
+    the button that will happen if you press enter.
+
+
+enter will select the primary or selected action
+space will select the focused action, even if it is not selected, or will switch that action to be selected.
+arrow keys will move selection around within a control
+tab / shift-tab will move focus through the focus loop
+
+
+special controls for
+file drop target
+
+disable groups of controls by putting them inside of a disabled fieldset
+
+open issues:
+    how to add icons inside of a text control
+    multiple sizes of controls
+
+
+dropdowns
+    which direction do they go?
+    default sizing or other sizing
+headers and dividers in
+    lists
+    dropdowns
+    trees
+    accordion panels
+
+tabs
+
+some controls have special styles when they are inside of a toolbar
+    buttons, toggle buttons, text fields
+
+status bars
+    navigation breadcrumbs, clickable and non-clickable
+
+
+progress bars
+progress spinners
+
+
+
+-->
+
+</body>
+</html>

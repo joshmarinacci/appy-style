@@ -1,0 +1,156 @@
+the core actions of the system are
+
+search
+select
+gather
+edit
+send
+automate
+
+content in chunks, whether preview or full content, has a titlebar,
+toolbar, central content/preview, and a status bar with tags and a button
+for sharing/workflow.
+
+the share button is just a way of launching workflows
+
+
+everything sharable has a common color and shape.
+items which are draggable that become shareable transform their color/shape
+
+the OS has three master colors, fg and bg and accent, used for rendering all components.
+
+side components have less contrast and are darker than central components. these
+are derived from the master colors.
+
+borders are *only* used where two things can move in relation to each-other, generally
+indicating two layers (ex: toolbar over scrolling list)
+
+
+the accent color is used to derive the active, selected, and focused colors.
+
+selection is indicated with fg and bg color changes.
+focused is indicated with a focus ring
+complex components have a focus ring only around the big component, not the sub components.
+
+editable things have slightly rounded corners?
+
+all content is in chunks
+chunks have panel views when viewed en mass, either as preview or the content.
+chunks are in traditional editors when edited.
+in both cases there is a title for the chunk on top, the preview/content,
+tags and status on the bottom.
+
+tags are rounded pills
+all search boxes are rounded pills
+buttons which trigger stateful actions should be a specially bright form of the accent color.
+(slightly glowing or animated?)
+
+common commands for searching, always goes to the inner most searchable component from the focus.
+
+the master colors are changed for themes and may change during they day:
+
+morning is pale-light with blue and green elements, medium contrast
+noon is light with blue and green elements, high contrast
+twilight is light with orange and red elements, medium contrast
+night is dark with subdued red and orange elements, low contrast
+
+
+
+everything is done by searching for structure of data chunks, or for added tags.
+they may be searched interchangeably.  an arduino sketch can be tagged. a tweet.
+a note in your todo list. a word doc. an mp3. these tags are global, or may be
+restricted to the current workspace.  There are only these two levels of tags
+rather than trying to encompass a full heirarchy. If you need more control then
+there is a tag editor for more complex management of your entire system.
+
+every window may have a preferred view and a structured view. ex: twitter client.
+you normally live in the preferred view which shows you the tweets as entire chunks
+with nice content previews, bio pics, etc.  in the structured view it is more like
+an itunes table where you see the tweet text, attachments, user, hashtags, and time as
+separate columns.  This is still not the true structure of the object, but rather
+an optimized view created by a tweet optimizer class which exposes only the useful
+parts. a fully exploded view could be seen by sending an object or a query to the
+data explorer, which gives you a full tree table view of everything.
+
+
+supported controls
+various buttons
+single selection (a form of button) (multi-select is evil. do not use it. use a list)
+various forms of text fields, some with popups (color, date, etc.)
+tabbar: a special list of buttons
+slider
+table, with variants
+list/tree, with variants
+various indicators (progress bar, meters, levels, labels)
+textarea, treated as a large text field. same color and effects
+panels
+modal dialogs (used sparingly)
+
+boxes:
+hbox
+vbox
+
+have control over alignment with align-center, align-baseline, align-stretch, etc.
+have control over sizing with manual sizing, using defaults, or 'grow'
+toolbar is a prefab form of hbox with some color changes
+sidebar is a prefab form of vbox with some color changes
+statusbar is a prefab form of hbox with some color and font changes
+
+there is no tree, do it with nested lists
+there is no treetable, do it with nested lists with custom positioning.
+
+almost anything can be turned into a vbox or hbox for layout purposes. ex: a list
+item can be an hbox to align it's sub contents easily.
+
+vbox-wrap and hbox-wrap are special forms with content wrapping, ex: iphoto
+photos view.
+
+stackbox positions all children to fill the box, and be on top of each other.
+generally used for something like tab panes where you will flip between pages
+of content. generally you shouldn't use this. instead you should be swapping
+content directly with something like flex.
+
+div.grid gives everything the same size?
+
+
+form controls are usually inside of div.toolbar or div.form. form is a light grid
+layout with rows.
+
+controls can be put into special groupings with the div.group
+
+
+complex apps
+things with sidebars should have a collapse button in the footer below the sidebar.
+bottom and top sidebars should never be used, only on the sides. vertical space is already
+at a premium.
+
+
+
+spacing can be tight or loose as determined by the parent div with .tight and .loose
+width sizing can be done with ems and min-width or, quickly with short, medium, long. medium is the
+default. or just size it in ems or rems.
+font size should almost never be changed. do it manually with css.
+
+
+special styles:
+no-bg gets rid of borders and backgrounds, but still leaves a bg hover effect and selection effect.
+lined and zebra for lists and tables
+use font-awesome for all icons
+
+tabbar, toolbar, titlebar, header and footer are hboxes with extra styles
+sidebar is vbox with extra styles
+
+strategy to build it:
+
+reset everything
+define the basic layout styles: vbox, hbox, alignments, fill, grow
+    (can fill work on parent instead of fixed?)
+start with master colors:  bg,fg,ac
+set bg and fg for main panel
+add buttons
+add titlebar, header, footer
+add lists and tables with standard styles
+
+now add all of the various controls
+now implement focused, selected, etc.
+

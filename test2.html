@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="newstart.css" rel="stylesheet">
+    <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<div class="vbox fill debug">
+    <div class="titlebar">Title of the window</div>
+    <header><button>button</button><label>a label</label><button class="fa fa-eye"></button></header>
+    <div class="grow hbox">
+
+        <div class="sidebar left">
+            <header>left sidebar</header>
+            <ul class="list">
+                <li class="header">Section 1</li>
+                <li><i class="fa fa-music"></i> Music</li>
+                <li><i class="fa fa-film"></i> Movies</li>
+                <li class="selected"><i class="fa fa-venus"></i> Selected Item</li>
+                <li>item 1</li>
+                <li>item 1</li>
+                <li>item 1</li>
+                <li class="header">Section 2</li>
+
+                <li><i class="fa fa-caret-down"></i> folder </li>
+                <ul>
+                    <li>item 4</li>
+                    <li>item 5</li>
+                </ul>
+
+                <li>item 6</li>
+                <li>item 7</li>
+                <li>item 8</li>
+            </ul>
+        </div>
+
+        <div class="grow vbox">
+            <div class="tabbar"><button>tab 1</button><button class="selected">tab 2</button><button>tab 3</button></div>
+            <div class="grow scroll">
+                <table class="striped" id="table">
+                    <thead>
+                        <th style="min-width: 10em">foo foo foo foo</th>
+                        <th style="min-width: 20em">bar</th>
+                        <th style="min-width: 15em">baz</th>
+                        <th style="min-width: 20em">quxx</th>
+                    </thead>
+                    <tbody id="tbody">
+                    <tr>
+                        <td>asdf</td>
+                        <td>56679</td>
+                        <td>asdf</td>
+                    </tr>
+                    <tr>
+                        <td>asdf</td>
+                        <td>56679</td>
+                        <td>asdf</td>
+                    </tr>
+                    <tr>
+                        <td>asdf</td>
+                        <td>56679</td>
+                        <td>asdf</td>
+                    </tr>
+                    <tr>
+                        <td>asdf</td>
+                        <td>56679</td>
+                        <td>asdf</td>
+                    </tr>
+                    <tr>
+                        <td>asdf</td>
+                        <td>56679</td>
+                        <td>asdf</td>
+                    </tr>
+                    <tr>
+                        <td>asdf</td>
+                        <td>56679</td>
+                        <td>asdf</td>
+                    </tr>
+                    <tr>
+                        <td>asdf</td>
+                        <td>56679</td>
+                        <td>asdf</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="sidebar right">
+            <header>right sidebar</header>
+            <div>
+                some form content
+            </div>
+            <header>sub sidebar</header>
+            <div>
+                some more form content
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <span>status bar</span>
+        <span class="grow"></span>
+        <span>centered</span>
+        <span class="grow"></span>
+        <span>right</span>
+    </div>
+
+</div>
+
+</body>
+<script type="text/javascript">
+    var tbody = document.getElementById("tbody");
+    var str = "";
+    for(var i=0; i<100; i++) {
+        str += "<tr><td>foo</td><td>"+Math.floor(Math.random()*1000)+"</td><td>foo</td><td>foo</td></tr>";
+    }
+    tbody.innerHTML = str;
+</script>
+</html>
