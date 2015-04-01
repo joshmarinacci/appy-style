@@ -154,4 +154,5 @@ add lists and tables with standard styles
 now add all of the various controls
     button, input[type='button'], input[type='checkbox'].button input[type='submit'], reset
 now implement focused, selected, etc.
-add popups and dropdowns
+
+add popups and dropdowns and dialogs
