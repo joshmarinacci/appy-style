@@ -156,3 +156,18 @@ now add all of the various controls
 now implement focused, selected, etc.
 
 add popups and dropdowns and dialogs
+
+---
+
+
+the base of popovers, dropdowns, and tooltips is the popup.
+
+you put 'popup-container' on a div around whatever control the popup will be positioned
+relative to.  then put 'popup' on the content that is the popup.  further style the popup
+ with ul.menu for standard dropdown menu style,  div.popover for an io style pop-over,
+  ul.dropdown for a button dropdown style, div.tooltip for a tooltip style
+
+javascript is still required for proper keyboard action on these popups.
+
+
+

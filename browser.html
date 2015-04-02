@@ -5,13 +5,21 @@
     <title></title>
     <link href="newstart.css" rel="stylesheet">
     <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <style type="text/css">
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            font-size: 11pt;
+        }
         header {
             align-items: center;
             padding: 0;
             margin: 0;
         }
-        header > button {
+        header button {
             border: 1px solid transparent;
             background-color: transparent;
             margin: 0.1em;
@@ -20,9 +28,18 @@
         header > .group {
             margin: 0.1em;
         }
-        header > button:hover {
+        header button:hover {
             border-style: solid;
             border-color: gray;
+        }
+
+        .url-bar button {
+            border-color: black;
+            border-radius: 0;
+            background-color: white;
+        }
+        .url-bar button:hover {
+            border-color: black;
         }
 
         .url-bar button:first-child {
@@ -33,70 +50,6 @@
         }
         .url-bar button:last-child {
             border-width: 1px 1px 1px 0px;
-        }
-
-        .menu-trigger {
-            position: relative;
-        }
-
-        ul.menu, ul.menu ul.menu {
-            list-style: none;
-            margin:0;
-            border: 1px solid gray;
-            min-width: 20em;
-            border-radius: 0.5em;
-            padding: 0.5em 0em;
-            background-color: #e6e6e6;
-            display: block;
-            box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
-            opacity: 1.0;
-            position: absolute;
-            transition: opacity .15s ease-in-out;
-            visibility: hidden;
-        }
-        .menu.down {
-            top: 100%;
-            right: 0;
-        }
-        .menu.left {
-            top: 0;
-            right: 100%;
-            padding-left: 0;
-        }
-
-        .menu-trigger:hover > .menu {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        ul.menu li {
-            display: flex;
-            flex-direction: row;
-            align-items: baseline;
-            padding: 0.5em
-        }
-
-        ul.menu li:hover {
-            background-color: blue;
-        }
-
-
-        .menu li.divider {
-            border: 1px solid black;
-            border-width: 1px 0 0 0;
-            height: 0px;
-            margin: 0;
-            padding: 0;
-            max-height: 2px;
-        }
-        .menu .group {
-            margin: 0;
-            padding: 0;
-        }
-        .menu .group button {
-            font-size: 90%;
-            margin:0;
-            padding: 0.25em 0.5em;
         }
 
     </style>
@@ -115,25 +68,24 @@
         </div>
         <button class="fa fa-lock"></button>
         <button class="fa fa-bookmark"></button>
-        <div id="menu-button" class="menu-trigger">
+        <div class="popup-container">
             <button class="fa fa-list"></button>
-            <ul class="popup menu down">
-
-                    <li><span>New Tab</span><i class="grow"></i><b class="fa fa-apple fa-fw"></b> T</li>
-                    <li><span>New Window</span><i class="grow"></i> <b class="fa fa-apple fa-fw"></b> N</li>
-                    <li><span>New Incognito Window</span><i class="grow"></i><b class="fa fa-long-arrow-up fa-fw"></b> <b class="fa fa-apple fa-fw"></b> N</li>
-                    <li><span>Bookmarks</span><i class="grow"></i><b class="fa fa-caret-right"></b></li>
-                    <li class="divider"></li>
-                    <li><span>Edit</span><i class="grow"></i> <div class="group"><button>Cut</button><button>Copy</button><button>Paste</button></div> </li>
-                    <li class="divider"></li>
-                    <li><span>Save Page As...</span><i class="grow"></i> <b class="fa fa-apple fa-fw"></b> S</li>
-                    <li class="menu-trigger"><span>Bookmarks</span><i class="grow"></i><b class="fa fa-caret-right"></b>
-                        <ul class="menu left">
-                            <li><span>New Tab</span><i class="grow"></i><b class="fa fa-apple fa-fw"></b> T</li>
-                            <li>bar</li>
-                            <li>baz</li>
-                        </ul>
-                    </li>
+            <ul class="popup menu bottom-left">
+                <li><span>New Tab</span><i class="grow"></i><b class="fa fa-apple fa-fw"></b> T</li>
+                <li><span>New Window</span><i class="grow"></i> <b class="fa fa-apple fa-fw"></b> N</li>
+                <li><span>New Incognito Window</span><i class="grow"></i><b class="fa fa-long-arrow-up fa-fw"></b> <b class="fa fa-apple fa-fw"></b> N</li>
+                <li><span>Bookmarks</span><i class="grow"></i><b class="fa fa-caret-right"></b></li>
+                <li class="divider"></li>
+                <li><span>Edit</span><i class="grow"></i> <div class="group"><button>Cut</button><button>Copy</button><button>Paste</button></div> </li>
+                <li class="divider"></li>
+                <li><span>Save Page As...</span><i class="grow"></i> <b class="fa fa-apple fa-fw"></b> S</li>
+                <li class="popup-container"><span>Bookmarks</span><i class="grow"></i><b class="fa fa-caret-right"></b>
+                    <ul class="popup menu left-bottom">
+                        <li><span>New Tab</span><i class="grow"></i><b class="fa fa-apple fa-fw"></b> T</li>
+                        <li>bar</li>
+                        <li>baz</li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </header>
