@@ -5,9 +5,9 @@ $ac: #2266ff
 $darken_amount : 5%
 
 //twilight
-$bg: #f7ede1
+$bg: #f0e7dd
 $fg: #5e3e2f
-$ac: #ff2f25
+$ac: #ff7e0e
 $darken_amount : 5%
 
 //morning
@@ -23,10 +23,10 @@ $darken_amount : 5%
 //$darken_amount : 5%
 
 //midnight
-$bg: #113
-$fg: #777
-$ac: #665
-$darken_amount : 10%
+//$bg: #113
+//$fg: #777
+//$ac: #665
+//$darken_amount : 10%
 
 $border: darken($bg,$darken_amount*2)
 
@@ -166,7 +166,8 @@ input
   background-color: $bg
   border: 1px solid $fg
   outline: none
-
+ul, tr, table
+  outline: none
 
 
 @mixin button-base($bg,$text, $accent)
@@ -181,7 +182,7 @@ input
   outline: none
   text-align: center
   font-weight: 600
-  border-radius: 6px
+  border-radius: 0px
   border-width: 0px
   &:focus
     box-shadow: 0 0 10px $accent
