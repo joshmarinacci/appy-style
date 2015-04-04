@@ -1,3 +1,38 @@
+//noon
+$bg: #ffffff
+$fg: #222222
+$ac: #2266ff
+$darken_amount : 5%
+
+//twilight
+$bg: #f7ede1
+$fg: #5e3e2f
+$ac: #ff2f25
+$darken_amount : 5%
+
+//morning
+//$bg: #ffffff
+//$fg: #000050
+//$ac: #c5e550
+//$darken_amount : 5%
+
+//noon
+//$bg: #ffffff
+//$fg: #005000
+//$ac: #5ff550
+//$darken_amount : 5%
+
+//midnight
+$bg: #113
+$fg: #777
+$ac: #665
+$darken_amount : 10%
+
+$border: darken($bg,$darken_amount*2)
+
+
+
+
 @mixin flex
   display: -webkit-flex
   display: flex
@@ -53,19 +88,9 @@ html, body
 
 
 
-//noon
-$bg: #ffffff
-$fg: #222222
-$ac: #2266ff
-
-//twilight
-//$bg: #eee3d7
-//$fg: #5e3e2f
-//$ac: #ff2f25
 
 
 
-$border: darken($bg,30%)
 
 html, body
   background-color: $bg
@@ -73,28 +98,27 @@ html, body
   border-color: $border
 
 
-
 .titlebar
   +flex-row
-  background-color: darken($bg, 10%)
+  background-color: darken($bg, $darken_amount)
   padding: 0.5em
 header
   +flex-row
   border-style: solid
   border-width: 0px 0px 1px 0px
-  background-color: darken($bg, 10%)
+  background-color: darken($bg, $darken_amount)
   padding: 0.5em
 .sidebar header
-  background-color: darken($bg, 20%)
+  background-color: darken($bg, $darken_amount*2)
 
 footer
   +flex-row
   border-style: solid
   border-width: 1px 0px 0px 0px
-  background-color: darken($bg, 10%)
+  background-color: darken($bg, $darken_amount)
   padding: 0.5em
 .sidebar
-  background-color: darken($bg, 10%)
+  background-color: darken($bg, $darken_amount)
   min-width: 20em
   border-style: solid
 .sidebar.left
@@ -149,20 +173,22 @@ input
   display: inline-block
   line-height: 1.3em
   vertical-align: baseline
-  border: 1px solid $fg
+  border: 1px solid $bg
   color: $text
   background-color: $bg
   padding: 0.25em 0.5em
   margin: 0.5em
   outline: none
   text-align: center
-  font-weight: bold
+  font-weight: 600
+  border-radius: 6px
+  border-width: 0px
   &:focus
     box-shadow: 0 0 10px $accent
   &:hover
-    background-color: darken($bg,10%)
+    background-color: darken($bg,$darken_amount)
   &:active
-    background-color: darken($bg,20%)
+    background-color: darken($bg,$darken_amount*2)
   &:checked, &.selected
     background-color: $accent
     color: $bg
@@ -206,31 +232,45 @@ header button
 
 
 
+  //progress bar
+progress
+  -webkit-appearance: none
+  height: 0.5em
+  &::-webkit-progress-bar
+    background-color: $bg
+    border-radius: 0.5em
+  &::-webkit-progress-value
+    background-color: $ac
+    border-radius: 0.5em
 
+  //tab bar
 .tabbar
   +flex-row
   align-items: flex-end
-  background-color: darken($bg,20%)
+  background-color: darken($bg,$darken_amount*2)
   border: 1px solid $border
   border-width: 0px 0px 1px 0px
-.tabbar button
-  margin: 0.5em 0.5em 0 0.5em
-  padding: 0.5em 1em
-  background-color: darken($bg, 10%)
-  border-bottom-width: 0px
-.tabbar button.selected
-  background-color: $bg
-  color: $fg
-  margin-bottom: -1px
-.tabbar button:hover
-  background-color: $bg
+  button
+    margin: 0.5em 0.5em 0 0.5em
+    padding: 0.5em 1em
+    background-color: darken($bg, $darken_amount)
+    border-bottom-width: 0px
+  button.selected
+    background-color: $bg
+    color: $fg
+    margin-bottom: -1px
+  button:hover
+    background-color: $bg
 
+
+
+    //generic content
 .content
   padding: 0.5em
 
 
 
-
+  //fancy list
 ul.list
   margin: 0
   padding: 0
@@ -252,6 +292,8 @@ ul.list li:hover
 ul.list.lined li
   border-width: 0 0 1px 0
 
+
+  //menu list
 ul.menu
   list-style: none
   min-width: 20em
@@ -281,19 +323,25 @@ ul.menu
 
 
 
+  //basic table
 table
   border-collapse: collapse
-table td, table th
-  border-style: solid
-  border-width: 0px 1px 0 0
-  padding: 0.5em 1em
-  font-weight: normal
-table th
-  background-color: darken($bg,10%)
+  td, th
+    border-style: solid
+    border-width: 0px 1px 0 0
+    padding: 0.5em 1em
+    font-weight: normal
+  th
+    background-color: darken($bg,$darken_amount)
+  tr.selected
+    background-color: $ac
+    color: $bg
+  tr:hover, tr:nth-child(even):hover
+    background-color: lighten($ac,30%)
+
+  //striped table
 table.striped tr:nth-child(even)
-  background-color: darken($bg,5%)
-table tr:hover, table tr:nth-child(even):hover
-  background-color: lighten($ac,30%)
+  background-color: darken($bg,$darken_amount/2)
 
 
 
@@ -372,8 +420,4 @@ li.selected
   color: $bg
 
 
-//fake a selected table item for a second
-table tr:nth-child(9)
-  background-color: $ac
-  color: $bg
 
