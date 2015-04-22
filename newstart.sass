@@ -153,10 +153,9 @@ footer
 .row
   +flex-row
   align-items: baseline
-
-.row label:first-child
-  width: 30%
-  text-align: right
+  & label:first-child
+    width: 30%
+    text-align: right
 
 label, input
   color: $fg
@@ -174,7 +173,7 @@ ul, tr, table
   display: inline-block
   line-height: 1.3em
   vertical-align: baseline
-  border: 1px solid $bg
+  border: 1px solid darken($bg, $darken_amount*2)
   color: $text
   background-color: $bg
   padding: 0.25em 0.5em
@@ -183,19 +182,18 @@ ul, tr, table
   text-align: center
   font-weight: 600
   border-radius: 0px
-  border-width: 0px
   &:focus
     box-shadow: 0 0 10px $accent
-  &:hover
-    background-color: darken($bg,$darken_amount)
+  //&:hover
+  //  background-color: darken($bg,$darken_amount)
   &:active
     background-color: darken($bg,$darken_amount*2)
   &:checked, &.selected
     background-color: $accent
     color: $bg
-  &:checked:hover, &.selected:hover
-    background-color: lighten($accent,10%)
-    color: $bg
+  //&:checked:hover, &.selected:hover
+  //  background-color: lighten($accent,10%)
+  //  color: $bg
   &:disabled
     background-color: darken($bg,20%)
     color: lighten($fg,20%)
@@ -220,7 +218,7 @@ input[type="checkbox"].button:after
 .group
   +flex-row
   margin: 0.5em
-.group button, .group input
+.group button, .group input, .group input.button
   margin: 0
   padding: 0.25em 0.5em
   border-width: 1px 1px 1px 0px
@@ -260,8 +258,8 @@ progress
     background-color: $bg
     color: $fg
     margin-bottom: -1px
-  button:hover
-    background-color: $bg
+  //button:hover
+  //  background-color: $bg
 
 
 
@@ -287,8 +285,8 @@ ul.list ul
   padding: 0
   padding-left: 2em
 
-ul.list li:hover
-  background-color: lighten($ac,30%)
+//ul.list li:hover
+//  background-color: lighten($ac,30%)
 
 ul.list.lined li
   border-width: 0 0 1px 0
@@ -305,8 +303,8 @@ ul.menu
     flex-direction: row
     align-items: baseline
     padding: 0.5em
-  li:hover
-    background-color: lighten($ac,30%)
+  //li:hover
+  //  background-color: lighten($ac,30%)
   li.divider
     border: 1px solid black
     border-width: 1px 0 0 0
@@ -337,8 +335,8 @@ table
   tr.selected
     background-color: $ac
     color: $bg
-  tr:hover, tr:nth-child(even):hover
-    background-color: lighten($ac,30%)
+  //tr:hover, tr:nth-child(even):hover
+  //  background-color: lighten($ac,30%)
 
   //striped table
 table.striped tr:nth-child(even)

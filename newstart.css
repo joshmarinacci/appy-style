@@ -112,10 +112,9 @@ footer {
   -webkit-flex-direction: row;
   flex-direction: row;
   align-items: baseline; }
-
-.row label:first-child {
-  width: 30%;
-  text-align: right; }
+  .row label:first-child {
+    width: 30%;
+    text-align: right; }
 
 label, input {
   color: #222222;
@@ -134,7 +133,7 @@ button, input[type='submit'], input[type='reset'], input[type='button'] {
   display: inline-block;
   line-height: 1.3em;
   vertical-align: baseline;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #d6d6d6;
   color: #222222;
   background-color: #f0f0f0;
   padding: 0.25em 0.5em;
@@ -142,19 +141,13 @@ button, input[type='submit'], input[type='reset'], input[type='button'] {
   outline: none;
   text-align: center;
   font-weight: 600;
-  border-radius: 0px;
-  border-width: 0px; }
+  border-radius: 0px; }
   button:focus, input[type='submit']:focus, input[type='reset']:focus, input[type='button']:focus {
     box-shadow: 0 0 10px #2266ff; }
-  button:hover, input[type='submit']:hover, input[type='reset']:hover, input[type='button']:hover {
-    background-color: #e3e3e3; }
   button:active, input[type='submit']:active, input[type='reset']:active, input[type='button']:active {
     background-color: #d6d6d6; }
   button:checked, button.selected, input[type='submit']:checked, input[type='submit'].selected, input[type='reset']:checked, input[type='reset'].selected, input[type='button']:checked, input[type='button'].selected {
     background-color: #2266ff;
-    color: #f0f0f0; }
-  button:checked:hover, button.selected:hover, input[type='submit']:checked:hover, input[type='submit'].selected:hover, input[type='reset']:checked:hover, input[type='reset'].selected:hover, input[type='button']:checked:hover, input[type='button'].selected:hover {
-    background-color: #5589ff;
     color: #f0f0f0; }
   button:disabled, input[type='submit']:disabled, input[type='reset']:disabled, input[type='button']:disabled {
     background-color: #bdbdbd;
@@ -166,7 +159,7 @@ input[type="checkbox"].button {
   display: inline-block;
   line-height: 1.3em;
   vertical-align: baseline;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #d6d6d6;
   color: #222222;
   background-color: #f0f0f0;
   padding: 0.25em 0.5em;
@@ -174,14 +167,10 @@ input[type="checkbox"].button {
   outline: none;
   text-align: center;
   font-weight: 600;
-  border-radius: 0px;
-  border-width: 0px; }
+  border-radius: 0px; }
   input[type="radio"].button:focus,
   input[type="checkbox"].button:focus {
     box-shadow: 0 0 10px #2266ff; }
-  input[type="radio"].button:hover,
-  input[type="checkbox"].button:hover {
-    background-color: #e3e3e3; }
   input[type="radio"].button:active,
   input[type="checkbox"].button:active {
     background-color: #d6d6d6; }
@@ -189,11 +178,6 @@ input[type="checkbox"].button {
   input[type="checkbox"].button:checked,
   input[type="checkbox"].button.selected {
     background-color: #2266ff;
-    color: #f0f0f0; }
-  input[type="radio"].button:checked:hover, input[type="radio"].button.selected:hover,
-  input[type="checkbox"].button:checked:hover,
-  input[type="checkbox"].button.selected:hover {
-    background-color: #5589ff;
     color: #f0f0f0; }
   input[type="radio"].button:disabled,
   input[type="checkbox"].button:disabled {
@@ -211,7 +195,7 @@ input[type="checkbox"].button:after {
   flex-direction: row;
   margin: 0.5em; }
 
-.group button, .group input {
+.group button, .group input, .group input.button {
   margin: 0;
   padding: 0.25em 0.5em;
   border-width: 1px 1px 1px 0px; }
@@ -250,8 +234,6 @@ progress {
     background-color: #f0f0f0;
     color: #222222;
     margin-bottom: -1px; }
-  .tabbar button:hover {
-    background-color: #f0f0f0; }
 
 .content {
   padding: 0.5em; }
@@ -271,9 +253,6 @@ ul.list ul {
   padding: 0;
   padding-left: 2em; }
 
-ul.list li:hover {
-  background-color: #bbd0ff; }
-
 ul.list.lined li {
   border-width: 0 0 1px 0; }
 
@@ -287,8 +266,6 @@ ul.menu {
     flex-direction: row;
     align-items: baseline;
     padding: 0.5em; }
-  ul.menu li:hover {
-    background-color: #bbd0ff; }
   ul.menu li.divider {
     border: 1px solid black;
     border-width: 1px 0 0 0;
@@ -316,8 +293,6 @@ table {
   table tr.selected {
     background-color: #2266ff;
     color: #f0f0f0; }
-  table tr:hover, table tr:nth-child(even):hover {
-    background-color: #bbd0ff; }
 
 table.striped tr:nth-child(even) {
   background-color: #eaeaea; }
