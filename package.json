@@ -18,6 +18,7 @@
         "reactify": "^1.1.0"
     },
     "scripts": {
-        "watch":" watchify -d -v -t reactify tests/test.jsx -o tests/bundle.js"
+        "watch":" watchify -d -v -t reactify tests/test.jsx -o tests/bundle.js",
+        "build-resizablecolumn":"browserify -d -v -t reactify react/ResizableColumn.jsx -o react/bundle.js"
     }
 }

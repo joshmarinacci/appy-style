@@ -1,5 +1,6 @@
 var React = require('react');
 var CustomList = require('../react/CustomList.jsx');
+var ResizableColumn = require('../react/ResizableColumn.jsx');
 
 var data1 = [ "foo","bar","baz"];
 
@@ -43,12 +44,26 @@ var MainView = React.createClass({
         console.log("item was selected",item);
     },
     render: function() {
-        return <div>
-            <CustomList items={data1}/>
-            <CustomList items={data2} template={<SourceItem/>}/>
-            <CustomList items={data2} template={<SourceItem/>} onSelect={this.selectedItem}/>
+        return <div className='hbox fill'>
+            <ResizableColumn>
+                <header>plain list</header>
+                <CustomList items={data1}/>
+            </ResizableColumn>
+            <ResizableColumn>
+                <header>list w/ template</header>
+                <CustomList items={data2} template={<SourceItem/>}/>
+            </ResizableColumn>
+            <ResizableColumn>
+                <header>list w/ onSelect</header>
+                <CustomList items={data2} template={<SourceItem/>} onSelect={this.selectedItem}/>
+            </ResizableColumn>
         </div>
     }
 });
+/*
+ <CustomList items={data1}/>
+ <CustomList items={data2} template={<SourceItem/>}/>
+ <CustomList items={data2} template={<SourceItem/>} onSelect={this.selectedItem}/>
 
+ */
 React.render(<MainView/>, document.getElementById('main'));
