@@ -1,6 +1,6 @@
 {
     "name": "appy-style",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "CSS framework for desktop-style web-apps",
     "repository": {
         "type": "git",
@@ -13,7 +13,7 @@
     },
     "homepage": "https://github.com/joshmarinacci/appy-style",
     "dependencies": {
-        "font-awesome": "^4.3.0",
+        "font-awesome": "^4.3.0"
     },
     "scripts": {
     }
