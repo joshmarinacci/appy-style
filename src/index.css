@@ -7,3 +7,14 @@ html {
     height: 100%;
     position: relative;
 }
+
+
+.songs-table {
+    border: 1px solid black;
+    width: 100%;
+    border-collapse: collapse;
+}
+.songs-table td, .songs-table th {
+    border: 1px solid black;
+    padding: 0.2em 0.5em;
+}
