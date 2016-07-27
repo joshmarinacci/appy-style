@@ -36,7 +36,6 @@ class TunesDemo extends Component {
 
                     <div className='grow scroll vbox form'>
                         <h3>Form at the top</h3>
-
                         <div className="hbox">
                             <label>Basic buttons</label>
                             <button>do stuff</button>
@@ -66,6 +65,8 @@ class TunesDemo extends Component {
                             <input type="text" size="20" placeholder="username"/>
                             <input type="password" size="10" placeholder="password"/>
                         </div>
+
+
                         <div className="hbox">
                             <label>right aligned w/ primary button</label>
                             <button>Cancel</button>
