@@ -29,6 +29,7 @@ input[type=search] {
 button {
     background-color: #eee;
     border-color: #aaa;
+    border-radius: 0.2em;
 }
 button:hover {
     background-color: #aaa;
@@ -114,7 +115,12 @@ input {
 .group button {
     margin:0;
     border-width: 1px 0px 1px 1px;
+    border-radius: 0;
+}
+.group button:first-child {
+    border-radius: 0.2em 0em 0em 0.2em;
 }
 .group button:last-child {
     border-right-width: 1px;
+    border-radius: 0em 0.2em 0.2em 0 ;
 }
