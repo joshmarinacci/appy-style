@@ -19,8 +19,8 @@ and a status bar; use a nested set of hboxes and vboxes like this:
        <input type='search' placeholder='search for songs'/>
     </div>
         
-    <!-- the middle section -->
-    <div class='hbox'> 
+    <!-- the middle section. takes up most of the space -->
+    <div class='hbox grow'> 
         <!-- sources pane -->
         <div class='vbox'>
             <h3>sources</h3>
