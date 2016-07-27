@@ -52,7 +52,7 @@ and a status bar; use a nested set of hboxes and vboxes like this:
 </div>
 ```
 
-Primary layout classes:
+Primary layout classes, import `src/layout.css`
 
 * `hbox` creates a horizontal box. By default everything is aligned to the left
 * `vbox` creates a vertical box. by default everything is aligned to the top
@@ -64,6 +64,8 @@ Primary layout classes:
 
 You can make a great number of layouts with just these basics.
 
+    
+    
     
        
     
