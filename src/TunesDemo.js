@@ -49,7 +49,7 @@ class TunesDemo extends Component {
                         </div>
                         <div className="hbox">
                             <label>Radio Buttons</label>
-                            <input type="radio"/><label>Yes</label>
+                            <input type="radio" id="yes"/><label for="yes">Yes</label>
                             <input type="radio"/><label>No</label>
                             <input type="radio"/><label>Maybe</label>
                         </div>

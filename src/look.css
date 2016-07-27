@@ -106,11 +106,17 @@ input {
     margin-left: 0;
 }
 
+.form input + label {
+    border: 0px solid red;
+    margin-right: 1em;
+}
+
 
 .group {
     border: 0px solid red;
     margin:0;
     padding:0;
+    align-items: baseline;
 }
 .group button {
     margin:0;
