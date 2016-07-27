@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>button group</title>
+    <style type="text/css">
+        .toolbar {
+            border: 1px solid #222;
+            background-color: #444;
+            padding:0;
+            margin:0;
+        }
+        button {
+            border: 1px solid #aaa;
+            background-color: #fff;
+            padding: 0.25em 0.5em;
+            border-radius: 0.25em;
+            margin: 0;
+            font-size: 100%;
+            box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+
+        }
+        button:hover {
+            background-color: lightblue;
+        }
+
+
+        button:active {
+            background-color: #444;
+            color: #eee;
+        }
+        button.selected {
+            background-color: lightblue;
+            color: #333;
+        }
+
+        .toolbar button {
+            border-radius: 0;
+            background-color: #888;
+            color: #f0f0f0;
+        }
+        .toolbar button:hover {
+            background-color: #333;
+        }
+        .toolbar button:active {
+
+        }
+        .toolbar button.selected {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        .hbox {
+            display: flex;
+            flex-direction: row;
+        }
+        .group {
+            display: flex;
+            flex-direction: row;
+            margin:0;
+            padding:0;
+            border: 1px solid red;
+        }
+
+        .group button {
+            border-radius: 0em;
+            border-width: 1px 1px 1px 0px;
+            margin: 0;
+        }
+        .group button:first-child {
+            border-radius: 0.25em 0em 0em 0.25em;
+            border-left-width: 1px;
+        }
+        .group button:last-child {
+            border-radius: 0em 0.25em 0.25em 0em;
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 2) {
+            button {
+                border-width: 0.5px;
+            }
+            .group button {
+                border-width: 0.5px 0.5px 0.5px 0px;
+            }
+            .group button:first-child {
+                border-left-width: 0.5px;
+            }
+        }
+
+        .primary {
+            background-color: lightblue;
+        }
+
+        .debug {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+<h3>toolbar</h3>
+<div class="toolbar hbox">
+    <button>first</button>
+    <div class="group">
+        <button>open</button>
+        <button class="selected">new</button>
+        <button>save</button>
+    </div>
+    <button>another button </button>
+</div>
+
+<h3>hbox</h3>
+
+<div class="hbox">
+    <button>first</button>
+    <div class="group">
+        <button>first</button>
+        <button class="selected">second</button>
+        <button>third</button>
+    </div>
+    <button>another button </button>
+</div>
+
+
+<h3>form</h3>
+
+<style type="text/css">
+    body {
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    input {
+        font-size: 100%;
+    }
+    .vbox.form {
+        width: 30em;
+    }
+    .vbox.form .hbox {
+        border: 0px solid green;
+        margin: 0.25em;
+        line-height: 2em;
+        vertical-align: middle;
+    }
+
+    .vbox.form .hbox > *:first-child {
+        font-weight: bold;
+        margin-right: 1em;
+        text-align: right;
+        flex: 1;
+    }
+    .vbox.form .hbox > * {
+        flex: 2;
+    }
+
+    .vbox.form .hbox.children-right > * {
+        flex: inherit;
+    }
+
+    .vbox.form .hbox.children-right {
+        justify-content: flex-end;
+    }
+
+
+    input {
+        border-style: solid;
+        border-width: 1px;
+        padding: 0.25em 0.5em;
+    }
+
+    .group input {
+        border-left-width: 0px;
+        margin:0px;
+    }
+    .group input:first-child {
+        border-left-width: 1px;
+    }
+
+
+    @media (-webkit-min-device-pixel-ratio: 2) {
+        input {
+            border-width: 0.5px;
+        }
+        .group input:first-child {
+            border-left-width: 0.5px;
+        }
+    }
+
+</style>
+
+<div class="vbox form">
+    <div class="hbox">
+        <label for="firstname">first name</label>
+        <input id="firstname" type="text"/>
+    </div>
+    <div class="hbox">
+        <label for="lastname">last name</label>
+        <input id="lastname" type="text"/>
+    </div>
+    <div class="hbox">
+        <button>one</button>
+        <button>two</button>
+    </div>
+    <div class="hbox">
+        <div class="group">
+            one
+        </div>
+        <button>two</button>
+    </div>
+    <div class="hbox">
+        <label>gender</label>
+        <div class="group">
+            <button class="selected">male</button>
+            <button>female</button>
+        </div>
+    </div>
+    <div class="hbox">
+        <label>SSN</label>
+        <div class="group" id="ssn">
+            <input type="text" size="3" value="999"/>
+            <input type="text" size="2" value="99"/>
+            <input type="text" size="4" value="9999"/>
+        </div>
+    </div>
+    <div class="hbox children-right">
+        <button>Cancel</button>
+        <button class="primary">Save</button>
+    </div>
+</div>
+
+</body>
+</html>
