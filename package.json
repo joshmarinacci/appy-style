@@ -1,24 +1,28 @@
 {
-    "name": "appy-style",
-    "version": "0.0.2",
-    "description": "CSS framework for desktop web-apps",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/joshmarinacci/appy-style.git"
-    },
-    "author": "joshua@marinacci.org",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/joshmarinacci/appy-style/issues"
-    },
-    "homepage": "https://github.com/joshmarinacci/appy-style",
-    "dependencies": {
-        "font-awesome": "^4.3.0",
-        "react": "^0.13.2",
-        "reactify": "^1.1.0"
-    },
-    "scripts": {
-        "watch":" watchify -d -v -t reactify tests/test.jsx -o tests/bundle.js",
-        "build-resizablecolumn":"browserify -d -v -t reactify react/ResizableColumn.jsx -o react/bundle.js"
-    }
+  "name": "appy-style",
+  "version": "0.0.4",
+  "description": "CSS framework for desktop-style web-apps",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshmarinacci/appy-style.git"
+  },
+  "author": "joshua@marinacci.org",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshmarinacci/appy-style/issues"
+  },
+  "homepage": "https://github.com/joshmarinacci/appy-style",
+  "devDependencies": {
+    "react-scripts": "0.1.0"
+  },
+  "dependencies": {
+    "font-awesome": "^4.3.0",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  }
 }
