@@ -1,6 +1,6 @@
 var React = require('react');
-var CustomList = require('../react/CustomList.jsx');
-var ResizableColumn = require('../react/ResizableColumn.jsx');
+var CustomList = require('./CustomList.jsx');
+var ResizableColumn = require('./ResizableColumn.jsx');
 
 var data1 = [ "foo","bar","baz"];
 
