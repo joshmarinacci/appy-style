@@ -3,7 +3,7 @@ html {
 }
 
 #demo-pane {
-    border: 1px solid blue;
+    border: 0px solid blue;
     height: 100%;
     position: relative;
 }

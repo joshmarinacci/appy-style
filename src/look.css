@@ -32,7 +32,8 @@ button {
     border-radius: 0.2em;
 }
 button:hover {
-    background-color: #aaa;
+    background-color: #bbb;
+    border-color: #888;
 }
 button:active {
     background-color: #666;
