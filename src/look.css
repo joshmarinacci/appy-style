@@ -4,7 +4,7 @@ body {
     font-size: 11pt;
 }
 
-button, input, input[type=search] {
+button, input, input[type=search], .button {
     font-size: 100%;
     font-weight: normal;
     border: 1px solid black;
@@ -26,25 +26,25 @@ input[type=search] {
 
 /* styling buttons */
 
-button {
+button, .button {
     background-color: #eee;
     border-color: #aaa;
     border-radius: 0.2em;
 }
-button:hover {
+button:hover, .button:hover {
     background-color: #bbb;
     border-color: #888;
 }
-button:active {
+button:active, .button:active {
     background-color: #666;
 }
-button.selected {
+button.selected, .button.selected {
     background-color: #add1ff;
 }
-button.selected:hover {
+button.selected:hover, .button.selected:hover {
     background-color: #8faacc;
 }
-button.primary {
+button.primary, .button.primary {
     background-color: #add1ff;
 }
 
